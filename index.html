@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Streamline South — Hattiesburg, MS" />
+    <title>Streamline South</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      hr {
+        background-color: #5eb8ff;
+        height: 1px;
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #2a2a2a;
+        color: #5eb8ff;
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      .location {
+        margin-top: 0.75rem;
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        font-weight: 400;
+        opacity: 0.85;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Streamline South</h1>
+      <hr class="hero"></hr>
+      <p class="location">Hattiesburg, MS</p>
+    </div>
+  </body>
+</html>
