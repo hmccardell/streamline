@@ -1,56 +1,56 @@
-# Streamline
+# Streamline South
 
-A simple static website deployed via **Cloudflare Pages** and **GitHub**.
+Marketing website for **Streamline South LLC** — technology consulting and training for Gulf Coast businesses.
 
-## Local preview
+Built with React, Tailwind CSS, and React Router. Deployed to Cloudflare Pages.
 
-Open `index.html` in your browser, or run a local server:
-
-```bash
-npx serve .
-```
-
-Then visit `http://localhost:3000`.
-
-## Deploy to Cloudflare Pages (GitHub integration)
-
-### 1. Push to GitHub
+## Local development
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/streamline.git
-git push -u origin main
+npm install
+npm run dev
 ```
 
-### 2. Connect Cloudflare Pages
+Visit `http://localhost:5173`.
 
-1. Log in to the [Cloudflare dashboard](https://dash.cloudflare.com).
-2. Go to **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
-3. Select your GitHub account and the `streamline` repository.
-4. Use these build settings:
+## Build
 
-   | Setting            | Value |
-   | ------------------ | ----- |
-   | Framework preset   | None  |
-   | Build command      | *(leave empty)* |
-   | Build output directory | `/` or `.` |
+```bash
+npm run build
+npm run preview
+```
 
-5. Click **Save and Deploy**.
+## Deploy to Cloudflare Pages
 
-Every push to `main` will trigger a new deployment automatically.
+### Git integration (recommended)
 
-## Optional: GitHub Actions deploy
+| Setting | Value |
+| --- | --- |
+| Framework preset | None |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
 
-This repo includes `.github/workflows/deploy.yml` if you prefer deploying via Actions instead of the Cloudflare Git integration. You'll need these GitHub secrets:
+SPA routing is handled via `public/_redirects`.
 
-- `CLOUDFLARE_API_TOKEN` — create at [Cloudflare API tokens](https://dash.cloudflare.com/profile/api-tokens) with **Cloudflare Pages — Edit** permission.
-- `CLOUDFLARE_ACCOUNT_ID` — found on the right sidebar of any Cloudflare zone overview.
+### GitHub Actions
 
-## Customize
+This repo includes `.github/workflows/deploy.yml` for Actions-based deploys. Required secrets:
 
-- **Content** — edit `index.html`
-- **Styles** — edit `css/style.css` (change `--accent` for a new color)
-- **Scripts** — edit `js/main.js`
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+## Contact form setup
+
+1. Register at [web3forms.com](https://web3forms.com)
+2. Open `src/components/ContactForm.jsx`
+3. Replace `YOUR_WEB3FORMS_ACCESS_KEY` with your access key
+
+## Pages
+
+| Route | Page |
+| --- | --- |
+| `/` | Home |
+| `/smb` | SMB Services |
+| `/corporate` | Corporate Services |
+| `/about` | About |
+| `/contact` | Contact |

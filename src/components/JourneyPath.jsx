@@ -1,0 +1,32 @@
+export default function JourneyPath({ steps, description, cta }) {
+  return (
+    <div>
+      <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-0">
+        {steps.map((step, i) => (
+          <div key={step} className="flex items-center">
+            <div className="flex w-full items-center gap-3 rounded-lg border border-amber/30 bg-cream px-4 py-3 sm:w-auto sm:flex-col sm:gap-1 sm:px-5 sm:py-4 sm:text-center">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber text-sm font-semibold text-navy">
+                {i + 1}
+              </span>
+              <span className="text-sm font-medium text-navy">{step}</span>
+            </div>
+            {i < steps.length - 1 && (
+              <svg
+                className="mx-2 hidden h-5 w-5 shrink-0 text-amber sm:block"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            )}
+          </div>
+        ))}
+      </div>
+      {description && (
+        <p className="mx-auto mt-8 max-w-2xl text-center text-navy/80">{description}</p>
+      )}
+      {cta && <div className="mt-8 flex justify-center">{cta}</div>}
+    </div>
+  )
+}
