@@ -8,7 +8,10 @@ export default function CredibilityBar() {
               Founder experience at
             </p>
             <p className="mt-2 font-serif text-lg text-navy">
-              Nike, major medical data analytics firm
+              Nike
+            </p>
+            <p className="mt-2 font-serif text-lg text-navy">
+              Inovalon, a major medical data analytics firm
             </p>
           </div>
           <div className="text-center md:text-left">
@@ -16,7 +19,7 @@ export default function CredibilityBar() {
               Program graduates at
             </p>
             <p className="mt-2 font-serif text-lg text-navy">
-              Bloomberg, Koch Industries, United Airlines, DRW, Nike, Snap-On
+              Bloomberg, Koch Industries, United Airlines, DRW, Nike, Snap-On, Maryland Department of Health, and many more
             </p>
           </div>
         </div>
