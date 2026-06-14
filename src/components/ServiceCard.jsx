@@ -1,8 +1,21 @@
-function DetailRow({ label, value }) {
+import { Link } from 'react-router-dom'
+
+function DetailRow({ label, value, link }) {
   return (
     <div className="border-b border-navy/10 py-4 last:border-b-0 last:pb-0 first:pt-0">
       <dt className="text-xs font-semibold uppercase tracking-wider text-navy/50">{label}</dt>
-      <dd className="mt-1.5 text-sm leading-relaxed text-navy/80">{value}</dd>
+      <dd className="mt-1.5 text-sm leading-relaxed text-navy/80">
+        {link ? (
+          <>
+            {value.replace('get in touch', '')}
+            <Link to="/contact" className="text-amber hover:text-amber-hover">
+              get in touch
+            </Link>
+          </>
+        ) : (
+          value
+        )}
+      </dd>
     </div>
   )
 }
@@ -14,7 +27,11 @@ export default function ServiceCard({ service, showStep = true }) {
     service.specialties && { label: 'Specialties', value: service.specialties },
     service.duration && { label: 'Duration', value: service.duration },
     service.timeline && { label: 'Timeline', value: service.timeline },
-    { label: 'Investment', value: service.investment },
+    {
+      label: 'Investment',
+      value: service.investment,
+      link: service.investmentLink,
+    },
   ].filter(Boolean)
 
   return (
@@ -35,8 +52,8 @@ export default function ServiceCard({ service, showStep = true }) {
 
       <div className="mt-8 space-y-4">
         <dl className="rounded-lg border border-navy/10 bg-white p-5">
-          {overviewItems.map(({ label, value }) => (
-            <DetailRow key={label} label={label} value={value} />
+          {overviewItems.map(({ label, value, link }) => (
+            <DetailRow key={label} label={label} value={value} link={link} />
           ))}
         </dl>
 

@@ -6,14 +6,20 @@ export const corporateServices = [
     description:
       'Multi-day, fully customized programs built around your actual codebase, tools, and team skill level. Your people work with real examples from your environment — not toy problems.',
     whoItsFor:
-      'Mid-to-large organizations with internal L&D needs around Python, software development, automated testing, or AI/ML integration.',
+      'Mid-to-large organizations with internal L&D needs around Python, JavaScript, Java, software development, automated testing, or AI/ML integration.',
     whatsIncluded:
-      'Fully customized curriculum, hands-on exercises using your codebase and tools, and materials your team can reference after the session.',
+      'Fully customized curriculum, hands-on exercises, and reference materials your team can reference after the session.',
     whatItsNot:
       'This is not off-the-shelf training with your logo on the slides. Every program is designed from scratch for your team and your goals.',
     specialties: 'Python, software development fundamentals, automated testing, AI/ML integration',
     duration: '1–3 days on-site or remote',
-    investment: '$8,000–$25,000 depending on duration and customization',
+    investment: 'Priced based on duration and customization — get in touch',
+    investmentLink: true,
+    example: {
+      label: 'See an example',
+      content:
+        'We\'ve delivered this for teams like a 20-person IT operations group upskilled over three days in practical Python — data transformation, pulling from APIs, and automating repetitive tasks — followed by focused follow-up sessions on Cursor, Git with GitHub, and querying Jira\'s API with Python.',
+    },
   },
   {
     step: 2,
@@ -28,7 +34,13 @@ export const corporateServices = [
     whatItsNot:
       'This is not a business strategy session or a non-technical AI overview. It is built for people who write code and ship software.',
     duration: 'Typically 1–2 days',
-    investment: '$8,000–$18,000',
+    investment: 'Priced based on team size and scope — get in touch',
+    investmentLink: true,
+    example: {
+      label: 'See an example',
+      content:
+        'Such as: a development team evaluating whether and how to integrate LLM APIs into internal tooling, needing a shared framework and evaluation criteria before committing to an approach.',
+    },
   },
   {
     step: 3,

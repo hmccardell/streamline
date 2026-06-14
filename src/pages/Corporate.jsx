@@ -1,4 +1,5 @@
 import ServiceCard from '../components/ServiceCard'
+import ExampleDrawer from '../components/ExampleDrawer'
 import JourneyPath from '../components/JourneyPath'
 import CTASection from '../components/CTASection'
 import { corporateServices, corporateJourneySteps } from '../data/corporateServices'
@@ -29,6 +30,12 @@ export default function Corporate() {
                 className={i > 0 ? 'mt-10 pt-2' : ''}
               >
                 <ServiceCard service={service} />
+                {service.example && (
+                  <ExampleDrawer
+                    label={service.example.label}
+                    content={service.example.content}
+                  />
+                )}
               </div>
             ))}
           </div>
