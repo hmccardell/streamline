@@ -5,31 +5,24 @@ import { introduction, differentiators, valueStatement } from '../data/about'
 export default function About() {
   return (
     <>
-      {/* Page Hero */}
-      <section className="bg-navy py-16 md:py-20">
+      <section className="hero-glow py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-3xl text-cream md:text-5xl">
+          <h1 className="text-3xl text-text md:text-5xl">
             Built by an automation engineer with 10+ years experience in technology and training.
           </h1>
         </div>
       </section>
 
-      {/* Introduction + Differentiators */}
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           {introduction && (
-            <FormattedText
-              text={introduction}
-              className="leading-relaxed text-navy/80"
-              wrapperClassName="mb-8"
-            />
+            <FormattedText text={introduction} className="leading-relaxed text-body" wrapperClassName="mb-8" />
           )}
-
-          <div className="rounded-lg border border-navy/10 bg-white p-8">
-            <ul className="list-disc space-y-4 pl-5 marker:text-amber">
+          <div className="surface-card rounded-lg bg-surface p-8">
+            <ul className="list-disc space-y-4 pl-5 marker:text-accent">
               {differentiators.map((item) => (
-                <li key={item.label} className="leading-relaxed text-navy/80">
-                  <span className="font-semibold text-amber">{item.label}</span>
+                <li key={item.label} className="leading-relaxed text-body">
+                  <span className="font-semibold text-accent">{item.label}</span>
                   {' — '}
                   {item.description}
                 </li>
@@ -39,22 +32,17 @@ export default function About() {
         </div>
       </section>
 
-      {/* Value Statement */}
-      <section className="bg-cream-dark py-16 md:py-20">
+      <section className="bg-surface-alt py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <blockquote className="font-serif text-2xl leading-relaxed text-navy md:text-3xl">
+          <blockquote className="font-serif text-2xl leading-relaxed text-text md:text-3xl">
             &ldquo;{valueStatement}&rdquo;
           </blockquote>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <Link
-            to="/contact"
-            className="inline-block rounded-md bg-amber px-8 py-3 text-sm font-semibold text-navy transition-colors hover:bg-amber-hover"
-          >
+          <Link to="/contact" className="inline-block rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover">
             Work with us
           </Link>
         </div>

@@ -1,12 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0F1F38;
-  --color-navy-light: #1a3050;
-  --color-cream: #F8F7F4;
-  --color-cream-dark: #ede9e2;
-  --color-amber: #C9922A;
-  --color-amber-hover: #b07f22;
+  /* Deep navy-charcoal backgrounds */
+  --color-bg: #141c28;
+  --color-surface: #1e2d42;
+  --color-surface-alt: #182536;
+
+  /* Text hierarchy — warm headings, soft body (not all electric blue) */
+  --color-text: #f0f4f8;
+  --color-body: #b8c5d4;
+  --color-subtle: #7d8fa3;
+  --color-disabled: #566575;
+  --color-text-secondary: #8ebfff;
+
+  /* Warm gold — CTAs, taglines, step markers (original brand accent) */
+  --color-accent: #c9922a;
+  --color-accent-hover: #dbaa42;
+  --color-on-accent: #141c28;
+
+  /* Light blue — links and secondary highlights only */
+  --color-highlight: #5eb8ff;
+  --color-highlight-hover: #7ec8ff;
+
+  /* Alert callouts */
+  --color-warning: #ffb65e;
+  --color-warning-hover: #ffc47a;
+
+  /* Legacy aliases */
+  --color-navy: #f0f4f8;
+  --color-navy-light: #1e2d42;
+  --color-cream: #f0f4f8;
+  --color-cream-dark: #182536;
+  --color-white: #1e2d42;
+  --color-amber: #c9922a;
+  --color-amber-hover: #dbaa42;
+
   --font-serif: "DM Serif Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
@@ -17,12 +45,29 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-cream);
-  color: var(--color-navy);
+  background-color: var(--color-bg);
+  color: var(--color-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
+  color: var(--color-text);
+}
+
+.hero-glow {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(94 184 255 / 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgb(201 146 42 / 0.06), transparent),
+    linear-gradient(180deg, #182536 0%, var(--color-bg) 100%);
+}
+
+.surface-card {
+  border: 1px solid rgb(240 244 248 / 0.08);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+}
+
+.card-accent {
+  border-top: 3px solid var(--color-accent);
 }

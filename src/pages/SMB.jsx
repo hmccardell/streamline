@@ -54,12 +54,12 @@ export default function SMB() {
   return (
     <>
       {/* Page Hero */}
-      <section className="bg-navy py-16 md:py-20">
+      <section className="hero-glow py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-3xl text-cream md:text-5xl">
+          <h1 className="text-3xl text-text md:text-5xl">
             Practical technology help for small businesses.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream/75">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-body">
             From process audits to hands-on AI training — built for businesses with 5–50
             employees in Mississippi, Alabama, and Louisiana.
           </p>
@@ -67,16 +67,16 @@ export default function SMB() {
       </section>
 
       {/* Industries */}
-      <section className="border-b border-navy/10 py-10">
+      <section className="border-b border-text/10 py-10">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wider text-navy/50">
+          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wider text-subtle">
             Industries We Serve
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {smbIndustries.map((industry) => (
               <span
                 key={industry}
-                className="rounded-full border border-navy/15 bg-white px-4 py-2 text-sm text-navy/80"
+                className="rounded-full border border-text/15 bg-surface px-4 py-2 text-sm text-body"
               >
                 {industry}
               </span>
