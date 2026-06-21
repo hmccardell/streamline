@@ -11,8 +11,8 @@ export const corporateServices = [
       'Fully customized curriculum, hands-on exercises, and reference materials your team can reference after the session.',
     whatItsNot:
       'This is not off-the-shelf training with your logo on the slides. Every program is designed from scratch for your team and your goals.',
-    specialties: 'Python, software development fundamentals, Agile / Scrum adoption, automated testing, AI integration',
-    duration: '1–3 days on-site or remote',
+    specialties: 'AI Integraiton, Python, software development fundamentals, Agile / Scrum adoption, automated testing, and more.',
+    duration: '1–3 days on-site or remote.',
     investment: 'Priced based on duration and customization — get in touch',
     investmentLink: true,
     example: {
@@ -33,8 +33,8 @@ export const corporateServices = [
       'Curriculum design, training materials, exercises, and assessments — ready for your internal team to deliver.',
     whatItsNot:
       'This is not workshop delivery by us. We build the curriculum; your team runs the sessions.',
-    duration: 'Scope-dependent, typically 2–4 weeks',
-    investment: '$3,000–$8,000 depending on scope',
+    duration: 'Scope-dependent, typically 2–4 weeks.',
+    investment: '$3,000–$8,000 depending on scope.',
   },
 ]
 

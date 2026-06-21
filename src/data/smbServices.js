@@ -8,12 +8,12 @@ export const smbServices = [
     whoItsFor:
       'Business owners or office managers who suspect they have inefficient processes but aren\'t sure where to start or what it would cost to fix.',
     whatsIncluded:
-      '2–3 hour on-site or virtual session, workflow mapping, written findings report, estimated ROI for each opportunity',
+      '2–3 hour on-site or virtual session, workflow mapping, written findings report, estimated ROI for each opportunity.',
     whatItsNot:
       'This is not a full automation build, ongoing support, or a commitment to further work with us. You walk away with a report — nothing more, nothing less.',
     deliverable: 'A written report with prioritized recommendations.',
     timeline: 'Typically 1–2 weeks from kickoff to delivery.',
-    investment: '$750–$1,500',
+    investment: '$750–$1,500 depending on scope.',
     example: {
       label: 'See an example',
       content:
@@ -46,7 +46,7 @@ export const smbServices = [
     name: 'AI Readiness Workshop',
     tagline: 'Practical AI adoption — not hype.',
     description:
-      'AI is the biggest buzz in tech. Not sure how it could help you, your staff, or your business operations? Need some guidance to get started? \n\nWe’ll facilitate a half-day or full-day working session where your team learns which AI tools actually apply to your business, how to use them safely, and how to build them into daily workflows. \n\nThis is hands-on, not a lecture, and is driven from your specific business challenges. Your team will leave understanding what AI can realistically do for your business — and what it cannot.',
+      'AI is the biggest buzz in tech. Perhaps you\'re not sure how it could help you, your staff, or your business operations. Maybe you\'ve got some great ideas but just don\'t know where to start. \n\nWe’ll facilitate a half-day or full-day working session where your team learns which AI tools actually apply to your business, how to use them safely, and how to build them into daily workflows. \n\nThis is hands-on, not a lecture, and is driven from your specific business challenges. Your team will leave understanding what AI can realistically do for your business and what it cannot.',
     whoItsFor:
       'Teams that want practical AI understanding without the hype — business owners, office managers, and staff who will actually use these tools.',
     whatsIncluded:
@@ -55,7 +55,7 @@ export const smbServices = [
       'This is not generic AI overview training, a tool sales pitch, or implementation of AI systems into your workflows. We teach — we do not build during this engagement.',
     deliverable: 'Workshop session plus reference documentation.',
     timeline: 'Half-day to full-day session, scheduled at your convenience.',
-    investment: 'Priced based on format and group size, typically $1,200–$2,000 for half day, and $2,000-3,500 for full day.',
+    investment: 'Priced based on format and group size.\n\n Typically $1,200–$2,000 for half day, and $2,000-3,500 for full day.',
     example: {
       label: 'See an example',
       content:
@@ -76,7 +76,7 @@ export const smbServices = [
       'This is not unlimited development hours, day-to-day IT support, or emergency on-call service. It is strategic advisory — not a help desk.',
     deliverable: 'Ongoing advisory relationship with documented recommendations.',
     timeline: 'Monthly retainer, minimum commitment based on your needs.',
-    investment: '$750–$1,500/month based on hours',
+    investment: '$750–$1,500/month based on hours.',
     example: {
       label: 'See an example',
       content:
@@ -88,16 +88,16 @@ export const smbServices = [
     name: 'Technical Training',
     tagline: 'Build capability that stays in your organization.',
     description:
-      'I’ve personally trained hundreds of individuals with little to no technical experience. From how to make spreadsheets work for them to training them in full blown software development. Let me upskill you and your staff and give your business an edge. Customized training for business staff who need to understand or maintain technical systems — whether that\'s Python basics, workflow automation tools, or data fundamentals. Sessions are built around your actual systems and your actual data.',
+      'I’ve personally trained hundreds of individuals with little to no technical experience. From how to make spreadsheets work for them to training them in full blown software development. Let me upskill you and your staff and give your business an edge. \n\n I\'ll build customized training for your business staff who need to understand or maintain technical systems, or even build their own automation. Whether it\'s Python basics, workflow automation tools, or data fundamentals, these sessions are built around your actual systems and your actual data.',
     whoItsFor:
       'Teams that need to build internal technical literacy and capability around specific tools, workflows, or skills relevant to your business. This is not a generic overview of a topic, but a focused training session on a specific tool or skill that is relevant to your business.',
     whatsIncluded:
-      'Needs assessment, custom instructional session design, hands-on instruction, reference materials',
+      'Needs assessment, custom instructional session design, hands-on instruction, reference materials.',
     whatItsNot:
       'This is not certification exam prep, abstract theory lectures, or off-the-shelf curriculum pulled from a shelf. Every session is built for your context.',
     deliverable: 'Training sessions for individuals or teams with supporting reference materials.',
     timeline: 'Individual sessions or multi-session packages.',
-    investment: 'Typically $300–$500 per session, $2,000–$3,500 for structured package (8 sessions)',
+    investment: 'Typically $300–$500 per session, $2,000–$3,500 for structured package (8 sessions).',
     example: {
       label: 'See an example',
       content:

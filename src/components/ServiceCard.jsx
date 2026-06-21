@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import FormattedText from './FormattedText'
 
 function DetailRow({ label, value, link }) {
   return (
@@ -13,7 +14,7 @@ function DetailRow({ label, value, link }) {
             </Link>
           </>
         ) : (
-          value
+          <FormattedText text={value} className="text-sm leading-relaxed text-navy/80" />
         )}
       </dd>
     </div>
@@ -48,7 +49,11 @@ export default function ServiceCard({ service, showStep = true }) {
       )}
       <h3 className="text-2xl text-navy md:text-3xl">{service.name}</h3>
       <p className="mt-1 font-semibold text-amber">{service.tagline}</p>
-      <p className="mt-4 max-w-3xl leading-relaxed text-navy/80">{service.description}</p>
+      <FormattedText
+        text={service.description}
+        className="leading-relaxed text-navy/80"
+        wrapperClassName="mt-4 max-w-3xl"
+      />
 
       <div className="mt-8 space-y-4">
         <dl className="rounded-lg border border-navy/10 bg-white p-5">
@@ -69,7 +74,12 @@ export default function ServiceCard({ service, showStep = true }) {
             </svg>
             What it&apos;s NOT
           </dt>
-          <dd className="mt-2 text-sm leading-relaxed text-navy/80">{service.whatItsNot}</dd>
+          <dd className="mt-2">
+            <FormattedText
+              text={service.whatItsNot}
+              className="text-sm leading-relaxed text-navy/80"
+            />
+          </dd>
         </div>
       </div>
     </article>

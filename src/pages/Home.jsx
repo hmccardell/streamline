@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import JourneyPath from '../components/JourneyPath'
 import CredibilityBar from '../components/CredibilityBar'
+import { serviceSlug } from '../components/ServiceSectionNav'
 
+const processAuditId = serviceSlug('Process Audit')
 const valueProps = [
   {
     title: 'We solve the problem',
@@ -117,10 +119,9 @@ export default function Home() {
               description="Most clients start with the Process Audit — a low-risk engagement that identifies opportunities without a large upfront commitment."
               cta={
                 <Link
-                  to="/smb"
+                  to={`/smb#${processAuditId}`}
                   className="rounded-md bg-amber px-8 py-3 text-sm font-semibold text-navy transition-colors hover:bg-amber-hover"
-                >
-                  Start with a Process Audit
+                >                  Start with a Process Audit
                 </Link>
               }
             />

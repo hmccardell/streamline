@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import FormattedText from '../components/FormattedText'
 import { introduction, differentiators, valueStatement } from '../data/about'
 
 export default function About() {
@@ -17,7 +18,11 @@ export default function About() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           {introduction && (
-            <p className="mb-8 leading-relaxed text-navy/80">{introduction}</p>
+            <FormattedText
+              text={introduction}
+              className="leading-relaxed text-navy/80"
+              wrapperClassName="mb-8"
+            />
           )}
 
           <div className="rounded-lg border border-navy/10 bg-white p-8">

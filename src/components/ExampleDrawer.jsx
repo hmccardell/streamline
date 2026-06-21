@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import FormattedText from './FormattedText'
 
 export default function ExampleDrawer({ label = 'See an example', content }) {
   const [open, setOpen] = useState(false)
@@ -25,7 +26,11 @@ export default function ExampleDrawer({ label = 'See an example', content }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="pt-3 text-sm leading-relaxed text-navy/65">{content}</p>
+          <FormattedText
+            text={content}
+            className="text-sm leading-relaxed text-navy/65"
+            wrapperClassName="pt-3"
+          />
         </div>
       </div>
     </div>
