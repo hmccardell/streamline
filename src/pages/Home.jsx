@@ -121,7 +121,8 @@ export default function Home() {
                 <Link
                   to={`/smb#${processAuditId}`}
                   className="rounded-md bg-amber px-8 py-3 text-sm font-semibold text-navy transition-colors hover:bg-amber-hover"
-                >                  Start with a Process Audit
+                >
+                  Start with a Process Audit
                 </Link>
               }
             />
