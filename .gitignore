@@ -3,17 +3,15 @@ dist
 dist-ssr
 *.local
 .DS_Store
-<<<<<<< HEAD
-=======
 Thumbs.db
 *.log
 node_modules/
 .env
 .env.*
+.vite
 
 # wrangler files
 .wrangler
 .dev.vars*
 !.dev.vars.example
 !.env.example
->>>>>>> 6936f8c30ae2bb96823e753c069c08f5f749e47b
