@@ -23,7 +23,7 @@ export default function ContactForm() {
   return (
     <div>
       <form onSubmit={handleSubmit} className="space-y-6">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="access_key" value="4dd9fdfa-c1a2-4c83-b030-5729d4c939ee" />
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-text">Name</label>
           <input type="text" id="name" name="name" required className={inputClass} />
