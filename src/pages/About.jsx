@@ -5,7 +5,7 @@ import { introduction, differentiators, valueStatement } from '../data/about'
 export default function About() {
   return (
     <>
-      <section className="hero-glow py-16 md:py-20">
+      <section className="hero-glow pt-16 pb-8 md:pt-20 md:pb-10">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-3xl text-text md:text-5xl">
             Built by an automation engineer with 10+ years experience in technology and training.
@@ -13,7 +13,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="pb-16 pt-6 md:pb-20 md:pt-8">
         <div className="mx-auto max-w-3xl px-6">
           {introduction && (
             <FormattedText text={introduction} className="leading-relaxed text-body" wrapperClassName="mb-8" />
