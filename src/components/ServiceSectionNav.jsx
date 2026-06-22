@@ -13,15 +13,15 @@ function NavButton({ item, activeId, onSelect, compact = false }) {
                 ? 'border-accent bg-accent/10 text-text'
                 : 'border-text/10 bg-surface text-subtle hover:border-accent/30 hover:text-text'
             }`
-          : `block w-full rounded-md border-l-2 py-2 pl-3 pr-2 text-left text-sm leading-snug transition-colors ${
+          : `flex w-full items-start gap-1.5 rounded-md border-l-2 py-2 pl-3 pr-2 text-left text-sm leading-snug transition-colors ${
               isActive
                 ? 'border-accent bg-accent/5 font-medium text-text'
                 : 'border-transparent text-subtle hover:border-accent/30 hover:text-text'
             }`
       }
     >
-      {!compact && <span className="mr-1.5 font-semibold text-accent">{item.step}.</span>}
-      {item.name}
+      {!compact && <span className="shrink-0 font-semibold text-accent">{item.step}.</span>}
+      {!compact ? <span className="min-w-0">{item.name}</span> : item.name}
     </button>
   )
 }

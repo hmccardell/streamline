@@ -5,7 +5,7 @@ import { introduction, differentiators, valueStatement } from '../data/about'
 export default function About() {
   return (
     <>
-      <section className="hero-glow pt-16 pb-8 md:pt-20 md:pb-10">
+      <section className="hero-glow pt-10 pb-5 md:pt-14 md:pb-7">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-3xl text-text md:text-5xl">
             Built by an automation engineer with 10+ years experience in technology and training.
@@ -13,7 +13,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="pb-16 pt-6 md:pb-20 md:pt-8">
+      <section className="pb-12 pt-5 md:pb-16 md:pt-6">
         <div className="mx-auto max-w-3xl px-6">
           {introduction && (
             <FormattedText text={introduction} className="leading-relaxed text-body" wrapperClassName="mb-8" />
@@ -32,15 +32,15 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-surface-alt py-16 md:py-20">
+      <section className="bg-surface-alt py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <blockquote className="font-serif text-2xl leading-relaxed text-text md:text-3xl">
+          <blockquote className="text-lg leading-relaxed text-body md:text-xl">
             &ldquo;{valueStatement}&rdquo;
           </blockquote>
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <Link to="/contact" className="inline-block rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover">
             Work with us

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import ServiceCard from '../components/ServiceCard'
-import ExampleDrawer from '../components/ExampleDrawer'
+// import ExampleDrawer from '../components/ExampleDrawer'
 import CTASection from '../components/CTASection'
 import {
   ServiceSectionNavMobile,
@@ -54,7 +54,7 @@ export default function SMB() {
   return (
     <>
       {/* Page Hero */}
-      <section className="hero-glow py-16 md:py-20">
+      <section className="hero-glow py-10 md:py-14">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-3xl text-text md:text-5xl">
             Practical technology help for small businesses.
@@ -67,7 +67,7 @@ export default function SMB() {
       </section>
 
       {/* Industries */}
-      <section className="border-b border-text/10 py-10">
+      <section className="border-b border-text/10 py-8">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wider text-subtle">
             Industries We Serve
@@ -86,7 +86,7 @@ export default function SMB() {
       </section>
 
       {/* Services */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <ServiceSectionNavMobile
             items={navItems}
@@ -112,12 +112,14 @@ export default function SMB() {
                     className={`scroll-mt-24 ${i > 0 ? 'mt-10 pt-2' : ''}`}
                   >
                     <ServiceCard service={service} />
+                    {/* See an example — re-enable before launch
                     {service.example && (
                       <ExampleDrawer
                         label={service.example.label}
                         content={service.example.content}
                       />
                     )}
+                    */}
                   </div>
                 )
               })}

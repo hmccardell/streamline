@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
-            <p className="font-serif text-xl text-text">Streamline South</p>
+            <p className="text-base font-semibold text-text">Streamline South</p>
             <p className="mt-2 text-sm text-subtle">Hattiesburg, MS</p>
           </div>
           <nav className="flex flex-col gap-2 text-sm md:flex-row md:gap-8">

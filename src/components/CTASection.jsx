@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function CTASection({ headline, body, buttonText = 'Get in touch', buttonTo = '/contact', dark = false }) {
   return (
-    <section className={dark ? 'border-t border-accent/20 bg-bg py-16 md:py-20' : 'py-16 md:py-20'}>
+    <section className={dark ? 'border-t border-accent/20 bg-bg py-12 md:py-16' : 'py-12 md:py-16'}>
       <div className="mx-auto max-w-3xl px-6 text-center">
         <h2 className="text-3xl text-text md:text-4xl">{headline}</h2>
         {body && <p className="mt-4 text-lg leading-relaxed text-body">{body}</p>}

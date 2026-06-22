@@ -21,7 +21,7 @@ const smbJourneySteps = [
 export default function Home() {
   return (
     <>
-      <section className="hero-glow py-20 md:py-28">
+      <section className="hero-glow py-12 md:py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-3xl leading-tight text-text md:text-5xl md:leading-tight">
             We eliminate the inefficiencies slowing your business down — and make sure your team understands the solution.
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-3">
             {valueProps.map((item) => (
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-surface-alt py-16 md:py-20">
+      <section className="bg-surface-alt py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="surface-card rounded-lg bg-bg p-8">
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-center text-3xl text-text md:text-4xl">The SMB Client Journey</h2>
           <div className="mt-12">

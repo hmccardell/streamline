@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import ServiceCard from '../components/ServiceCard'
-import ExampleDrawer from '../components/ExampleDrawer'
+// import ExampleDrawer from '../components/ExampleDrawer'
 import JourneyPath from '../components/JourneyPath'
 import CTASection from '../components/CTASection'
 import {
@@ -55,7 +55,7 @@ export default function Corporate() {
   return (
     <>
       {/* Page Hero */}
-      <section className="hero-glow py-16 md:py-20">
+      <section className="hero-glow py-10 md:py-14">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-3xl text-text md:text-5xl">
             Technical training built for your team, your tools, and your goals.
@@ -68,7 +68,7 @@ export default function Corporate() {
       </section>
 
       {/* Services */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <ServiceSectionNavMobile
             items={navItems}
@@ -94,12 +94,14 @@ export default function Corporate() {
                     className={`scroll-mt-24 ${i > 0 ? 'mt-10 pt-2' : ''}`}
                   >
                     <ServiceCard service={service} />
+                    {/* See an example — re-enable before launch
                     {service.example && (
                       <ExampleDrawer
                         label={service.example.label}
                         content={service.example.content}
                       />
                     )}
+                    */}
                   </div>
                 )
               })}
@@ -109,7 +111,7 @@ export default function Corporate() {
       </section>
 
       {/* Corporate Client Journey */}
-      <section className="bg-surface-alt py-16 md:py-20">
+      <section className="bg-surface-alt py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-center text-3xl text-text md:text-4xl">Corporate Client Journey</h2>
           <div className="mt-12">
