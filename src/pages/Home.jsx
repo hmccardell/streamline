@@ -11,7 +11,12 @@ const valueProps = [
   { title: 'We train your people', description: 'Hands-on AI and technical training built around your actual tools, not generic overviews.' },
 ]
 
-const smbJourneySteps = ['Process Audit', 'Automation Implementation', 'AI Workshop', 'Advisory Retainer']
+const smbJourneySteps = [
+  { label: 'Process Audit', to: `/smb#${serviceSlug('Process Audit')}` },
+  { label: 'Automation Implementation', to: `/smb#${serviceSlug('Process Automation Implementation')}` },
+  { label: 'AI Workshop', to: `/smb#${serviceSlug('AI Readiness Workshop')}` },
+  { label: 'Advisory Retainer', to: `/smb#${serviceSlug('AI Advisory Retainer')}` },
+]
 
 export default function Home() {
   return (
