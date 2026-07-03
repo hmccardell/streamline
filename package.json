@@ -5,17 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs && node scripts/generate-sitemap.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.6.2"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.8",
     "@vitejs/plugin-react": "^4.5.2",
+    "puppeteer": "^25.3.0",
     "tailwindcss": "^4.1.8",
     "vite": "^6.3.5"
   }
