@@ -11,7 +11,3 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </HelmetProvider>,
 )
-
-queueMicrotask(() => {
-  document.dispatchEvent(new Event('prerender-ready'))
-})
