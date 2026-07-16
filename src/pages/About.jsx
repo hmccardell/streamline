@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import FormattedText from '../components/FormattedText'
+import SiteLogo from '../components/SiteLogo'
 import { introduction, differentiators, valueStatement } from '../data/about'
+import { ROUTES } from '../config/routes'
 
 export default function About() {
   return (
     <>
       <section className="hero-glow pt-10 pb-5 md:pt-14 md:pb-7">
         <div className="mx-auto max-w-4xl px-6 text-center">
+          <SiteLogo variant="hero" className="mb-8 md:mb-10" />
           <h1 className="text-3xl text-text md:text-5xl">
             Built by an automation engineer with 10+ years experience in technology and training.
           </h1>
@@ -42,7 +45,7 @@ export default function About() {
 
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <Link to="/contact" className="inline-block rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover">
+          <Link to={ROUTES.contact} className="inline-block rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover">
             Work with us
           </Link>
         </div>

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { ROUTES } from '../config/routes'
+import SiteLogo from './SiteLogo'
 
 const headerText = 'font-sans text-sm font-medium text-text transition-colors hover:text-highlight'
 
@@ -16,13 +18,14 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-text/8 bg-bg/95 shadow-md backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link
-          to="/"
-          className={`${headerText} text-base font-semibold`}
+          to={ROUTES.home}
+          className="flex shrink-0 items-center gap-3 transition-opacity hover:opacity-90"
           onClick={closeMobile}
         >
-          Streamline South
+          <SiteLogo variant="mark" />
+          <span className="font-sans text-sm font-semibold text-text sm:text-base">Streamline South</span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -44,14 +47,14 @@ export default function NavBar() {
             {servicesOpen && (
               <div className="absolute left-0 top-full pt-2">
                 <div className="surface-card min-w-[180px] rounded-md bg-surface py-2">
-                  <Link to="/smb" className={`block px-4 py-2 ${headerText}`}>Small Business</Link>
-                  <Link to="/corporate" className={`block px-4 py-2 ${headerText}`}>Corporate</Link>
+                  <Link to={ROUTES.smb} className={`block px-4 py-2 ${headerText}`}>Small Business</Link>
+                  <Link to={ROUTES.corporate} className={`block px-4 py-2 ${headerText}`}>Corporate</Link>
                 </div>
               </div>
             )}
           </div>
-          <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
+          <NavLink to={ROUTES.about} className={navLinkClass}>About</NavLink>
+          <NavLink to={ROUTES.contact} className={navLinkClass}>Contact</NavLink>
         </div>
 
         <button
@@ -76,12 +79,12 @@ export default function NavBar() {
       {mobileOpen && (
         <div className="border-t border-text/8 bg-bg px-6 py-4 md:hidden">
           <p className={`mb-2 ${headerText}`}>Services</p>
-          <Link to="/smb" className={`block py-2 ${headerText}`} onClick={closeMobile}>Small Business</Link>
-          <Link to="/corporate" className={`block py-2 ${headerText}`} onClick={closeMobile}>Corporate</Link>
+          <Link to={ROUTES.smb} className={`block py-2 ${headerText}`} onClick={closeMobile}>Small Business</Link>
+          <Link to={ROUTES.corporate} className={`block py-2 ${headerText}`} onClick={closeMobile}>Corporate</Link>
           <div className="my-3 border-t border-text/8" />
-          <NavLink to="/about" className={navLinkClass} onClick={closeMobile}>About</NavLink>
+          <NavLink to={ROUTES.about} className={navLinkClass} onClick={closeMobile}>About</NavLink>
           <div className="mt-2">
-            <NavLink to="/contact" className={navLinkClass} onClick={closeMobile}>Contact</NavLink>
+            <NavLink to={ROUTES.contact} className={navLinkClass} onClick={closeMobile}>Contact</NavLink>
           </div>
         </div>
       )}

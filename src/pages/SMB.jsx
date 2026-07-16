@@ -132,7 +132,6 @@ export default function SMB() {
         headline="Not sure where to start? Start with the Audit."
         body="The Process Audit is a fixed-fee, no-commitment engagement. You'll get a written report of your automation opportunities and projected time savings — whether you work with us further or not."
         buttonText="Get in touch"
-        buttonTo="/contact"
         dark
       />
     </>

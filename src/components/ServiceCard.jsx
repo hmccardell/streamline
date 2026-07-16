@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import FormattedText from './FormattedText'
+import { ROUTES } from '../config/routes'
 
 function DetailRow({ label, value, link }) {
   return (
@@ -9,7 +10,7 @@ function DetailRow({ label, value, link }) {
         {link ? (
           <>
             {value.replace('get in touch', '')}
-            <Link to="/contact" className="text-highlight hover:text-highlight-hover">get in touch</Link>
+            <Link to={ROUTES.contact} className="text-highlight hover:text-highlight-hover">get in touch</Link>
           </>
         ) : (
           <FormattedText text={value} className="text-sm leading-relaxed text-body" />

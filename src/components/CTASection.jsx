@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import { ROUTES } from '../config/routes'
 
-export default function CTASection({ headline, body, buttonText = 'Get in touch', buttonTo = '/contact', dark = false }) {
+export default function CTASection({ headline, body, buttonText = 'Get in touch', buttonTo = ROUTES.contact, dark = false }) {
   return (
     <section className={dark ? 'border-t border-accent/20 bg-bg py-12 md:py-16' : 'py-12 md:py-16'}>
       <div className="mx-auto max-w-3xl px-6 text-center">

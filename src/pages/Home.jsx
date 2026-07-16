@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import JourneyPath from '../components/JourneyPath'
 import CredibilityBar from '../components/CredibilityBar'
 import { serviceSlug } from '../components/ServiceSectionNav'
+import { ROUTES } from '../config/routes'
 
 const processAuditId = serviceSlug('Process Audit')
 
@@ -12,10 +13,10 @@ const valueProps = [
 ]
 
 const smbJourneySteps = [
-  { label: 'Process Audit', to: `/smb#${serviceSlug('Process Audit')}` },
-  { label: 'Automation Implementation', to: `/smb#${serviceSlug('Process Automation Implementation')}` },
-  { label: 'AI Workshop', to: `/smb#${serviceSlug('AI Readiness Workshop')}` },
-  { label: 'Advisory Retainer', to: `/smb#${serviceSlug('AI Advisory Retainer')}` },
+  { label: 'Process Audit', to: `${ROUTES.smb}#${serviceSlug('Process Audit')}` },
+  { label: 'Automation Implementation', to: `${ROUTES.smb}#${serviceSlug('Process Automation Implementation')}` },
+  { label: 'AI Workshop', to: `${ROUTES.smb}#${serviceSlug('AI Readiness Workshop')}` },
+  { label: 'Advisory Retainer', to: `${ROUTES.smb}#${serviceSlug('AI Advisory Retainer')}` },
 ]
 
 export default function Home() {
@@ -30,10 +31,10 @@ export default function Home() {
             Technology consulting and training for small businesses across the Gulf Coast.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/smb" className="w-full rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover sm:w-auto">
+            <Link to={ROUTES.smb} className="w-full rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover sm:w-auto">
               I run a small business
             </Link>
-            <Link to="/corporate" className="w-full rounded-md border border-text/20 px-8 py-3 text-sm font-semibold text-text transition-colors hover:border-highlight/50 hover:bg-highlight/5 sm:w-auto">
+            <Link to={ROUTES.corporate} className="w-full rounded-md border border-text/20 px-8 py-3 text-sm font-semibold text-text transition-colors hover:border-highlight/50 hover:bg-highlight/5 sm:w-auto">
               I lead a corporate team
             </Link>
           </div>
@@ -62,7 +63,7 @@ export default function Home() {
                 Medical/dental practices, law firms, real estate, accounting, contractors.
                 5–50 employees in Mississippi, Alabama, and Louisiana.
               </p>
-              <Link to="/smb" className="mt-6 inline-block text-sm font-semibold text-highlight transition-colors hover:text-highlight-hover">
+              <Link to={ROUTES.smb} className="mt-6 inline-block text-sm font-semibold text-highlight transition-colors hover:text-highlight-hover">
                 View SMB services &rarr;
               </Link>
             </div>
@@ -72,7 +73,7 @@ export default function Home() {
                 Mid-to-large organizations with internal L&amp;D needs around Python, AI,
                 and software development upskilling.
               </p>
-              <Link to="/corporate" className="mt-6 inline-block text-sm font-semibold text-highlight transition-colors hover:text-highlight-hover">
+              <Link to={ROUTES.corporate} className="mt-6 inline-block text-sm font-semibold text-highlight transition-colors hover:text-highlight-hover">
                 View corporate services &rarr;
               </Link>
             </div>
@@ -88,7 +89,7 @@ export default function Home() {
               steps={smbJourneySteps}
               description="Most clients start with the Process Audit — a low-risk engagement that identifies opportunities without a large upfront commitment."
               cta={
-                <Link to={`/smb#${processAuditId}`} className="rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover">
+                <Link to={`${ROUTES.smb}#${processAuditId}`} className="rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover">
                   Start with a Process Audit
                 </Link>
               }

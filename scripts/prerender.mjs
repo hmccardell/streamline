@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { ROUTE_PATHS } from '../src/config/routes.js'
+import { ROUTE_PATHS, toCanonicalPath } from '../src/config/routes.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = join(__dirname, '../dist')
@@ -18,7 +18,7 @@ function renderPage(route) {
 }
 
 for (const route of ROUTE_PATHS) {
-  const html = renderPage(route)
+  const html = renderPage(toCanonicalPath(route))
 
   if (route === '/') {
     writeFileSync(join(distDir, 'index.html'), html, 'utf8')

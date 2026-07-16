@@ -1,7 +1,31 @@
 export const SITE_URL = 'https://streamlinesouth.com'
 
-/** Paths prerendered at build time — keep in sync with App.jsx Routes */
+/** Canonical paths with trailing slashes (Cloudflare Pages serves folder routes this way). */
+export const ROUTES = {
+  home: '/',
+  smb: '/smb/',
+  corporate: '/corporate/',
+  about: '/about/',
+  contact: '/contact/',
+}
+
+/** Paths prerendered at build time — keep in sync with AppShell Routes */
 export const ROUTE_PATHS = ['/', '/smb', '/corporate', '/about', '/contact']
+
+export function normalizeRoutePath(pathname) {
+  if (!pathname || pathname === '/') return '/'
+  return pathname.replace(/\/$/, '')
+}
+
+export function toCanonicalPath(pathname) {
+  const path = normalizeRoutePath(pathname)
+  return path === '/' ? '/' : `${path}/`
+}
+
+export function toCanonicalUrl(pathname) {
+  const canonical = toCanonicalPath(pathname)
+  return canonical === '/' ? SITE_URL : `${SITE_URL}${canonical}`
+}
 
 export const DEFAULT_SEO = {
   title: 'Streamline South | Gulf Coast Tech Consulting',

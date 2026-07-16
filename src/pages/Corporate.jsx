@@ -123,7 +123,6 @@ export default function Corporate() {
       <CTASection
         headline="Let's scope your engagement."
         buttonText="Get in touch"
-        buttonTo="/contact"
         dark
       />
     </>

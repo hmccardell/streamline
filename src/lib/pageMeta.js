@@ -1,4 +1,10 @@
-import { DEFAULT_SEO, LOCAL_BUSINESS_JSON_LD, PAGE_SEO, SITE_URL } from '../config/routes'
+import {
+  DEFAULT_SEO,
+  LOCAL_BUSINESS_JSON_LD,
+  normalizeRoutePath,
+  PAGE_SEO,
+  toCanonicalUrl,
+} from '../config/routes'
 
 function escapeHtml(text) {
   return text
@@ -9,15 +15,16 @@ function escapeHtml(text) {
 }
 
 export function getPageMeta(pathname) {
-  const seo = PAGE_SEO[pathname] ?? {}
+  const path = normalizeRoutePath(pathname)
+  const seo = PAGE_SEO[path] ?? {}
 
   return {
     title: seo.title ?? DEFAULT_SEO.title,
     description: seo.description ?? DEFAULT_SEO.description,
-    canonicalUrl: `${SITE_URL}${pathname === '/' ? '' : pathname}`,
+    canonicalUrl: toCanonicalUrl(path),
     ogImage: DEFAULT_SEO.ogImage,
     ogType: DEFAULT_SEO.ogType,
-    jsonLd: pathname === '/' ? LOCAL_BUSINESS_JSON_LD : undefined,
+    jsonLd: path === '/' ? LOCAL_BUSINESS_JSON_LD : undefined,
   }
 }
 
