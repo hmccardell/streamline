@@ -9,7 +9,7 @@ export default function CredibilityBar() {
             <p className="mt-2 leading-relaxed text-body">Inovalon, a major medical data analytics firm</p>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-xs font-semibold uppercase tracking-wider text-accent-text">Program graduates at</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent-text">Training Program graduates at</p>
             <p className="mt-2 leading-relaxed text-body">
               Bloomberg, DRW, Koch Industries, Kroger, Nationwide Insurance, Nike, Snap-on, United Airlines, and many more.
             </p>
