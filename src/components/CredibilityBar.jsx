@@ -11,7 +11,7 @@ export default function CredibilityBar() {
           <div className="text-center md:text-left">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent-text">Program graduates at</p>
             <p className="mt-2 leading-relaxed text-body">
-              Bloomberg, Koch Industries, United Airlines, DRW, Nike, Snap-On, Maryland Department of Health, and many more
+              Bloomberg, DRW, Koch Industries, Kroger, Nationwide Insurance, Nike, Snap-on, United Airlines, and many more.
             </p>
           </div>
         </div>
