@@ -13,6 +13,7 @@ export default function About() {
           <h1 className="text-3xl text-text md:text-5xl">
             Built by an automation engineer with 10+ years experience in technology and training.
           </h1>
+          <div className="brand-divider-fade mx-auto mt-8 max-w-xl" aria-hidden="true" />
         </div>
       </section>
 
@@ -22,10 +23,10 @@ export default function About() {
             <FormattedText text={introduction} className="leading-relaxed text-body" wrapperClassName="mb-8" />
           )}
           <div className="surface-card rounded-lg bg-surface p-8">
-            <ul className="list-disc space-y-4 pl-5 marker:text-accent">
+            <ul className="list-disc space-y-4 pl-5 marker:text-accent-text">
               {differentiators.map((item) => (
                 <li key={item.label} className="leading-relaxed text-body">
-                  <span className="font-semibold text-accent">{item.label}</span>
+                  <span className="font-semibold text-accent-text">{item.label}</span>
                   {' — '}
                   {item.description}
                 </li>

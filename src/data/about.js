@@ -11,7 +11,7 @@ export const differentiators = [
   {
     label: 'Proven training outcomes',
     description:
-      'Program graduates working at Bloomberg, DRW, Koch Industries, Kroger, Nike, Snap-On, United Airlines, and others.',
+      'We know what success means. Training program graduates working at Bloomberg, DRW, Koch Industries, Kroger, Nike, Snap-On, United Airlines, and others.',
   },
   {
     label: 'Requirements expertise',
@@ -19,12 +19,12 @@ export const differentiators = [
       'Business analyst training background means we define the problem correctly before building the solution.',
   },
   {
-    label: 'Teaching ability',
+    label: 'Breaking it down',
     description:
-      'Every engagement includes knowledge transfer; clients understand what was built and can maintain it.',
+      'Every engagement includes knowledge transfer; clients understand what was built.',
   },
   {
-    label: 'Local presence',
+    label: 'Presence',
     description:
       'Based in Hattiesburg, MS, serving clients across the Gulf Coast in person or anywhere remotely.',
   },

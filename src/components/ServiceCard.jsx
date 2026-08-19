@@ -5,15 +5,15 @@ import { ROUTES } from '../config/routes'
 function DetailRow({ label, value, link }) {
   return (
     <div className="border-b border-text/8 py-4 last:border-b-0 last:pb-0 first:pt-0">
-      <dt className="text-xs font-semibold uppercase tracking-wider text-subtle">{label}</dt>
-      <dd className="mt-1.5 text-sm leading-relaxed text-body">
+      <dt className="text-xs font-semibold uppercase tracking-wider text-body">{label}</dt>
+      <dd className="mt-1.5 text-sm leading-relaxed text-text/90">
         {link ? (
           <>
             {value.replace('get in touch', '')}
             <Link to={ROUTES.contact} className="text-highlight hover:text-highlight-hover">get in touch</Link>
           </>
         ) : (
-          <FormattedText text={value} className="text-sm leading-relaxed text-body" />
+          <FormattedText text={value} className="text-sm leading-relaxed text-text/90" />
         )}
       </dd>
     </div>
@@ -37,11 +37,11 @@ export default function ServiceCard({ service, showStep = true }) {
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-semibold text-on-accent">
             {service.step}
           </span>
-          {service.step < 5 && <div className="hidden h-px flex-1 bg-accent/30 sm:block" />}
+          {service.step < 5 && <div className="brand-divider hidden flex-1 sm:block" />}
         </div>
       )}
       <h3 className="text-2xl text-text md:text-3xl">{service.name}</h3>
-      <p className="mt-1 font-semibold text-accent">{service.tagline}</p>
+      <p className="mt-1 font-semibold text-accent-text">{service.tagline}</p>
       <FormattedText text={service.description} className="leading-relaxed text-body" wrapperClassName="mt-4 max-w-3xl" />
 
       <div className="mt-8 space-y-4">
@@ -59,7 +59,7 @@ export default function ServiceCard({ service, showStep = true }) {
             What it&apos;s NOT
           </dt>
           <dd className="mt-2">
-            <FormattedText text={service.whatItsNot} className="text-sm leading-relaxed text-body" />
+            <FormattedText text={service.whatItsNot} className="text-sm leading-relaxed text-text/90" />
           </dd>
         </div>
       </div>

@@ -3,8 +3,9 @@ import { ROUTES } from '../config/routes'
 
 export default function CTASection({ headline, body, buttonText = 'Get in touch', buttonTo = ROUTES.contact, dark = false }) {
   return (
-    <section className={dark ? 'border-t border-accent/20 bg-bg py-12 md:py-16' : 'py-12 md:py-16'}>
-      <div className="mx-auto max-w-3xl px-6 text-center">
+    <section className={dark ? 'bg-bg' : 'py-12 md:py-16'}>
+      {dark && <div className="brand-divider" aria-hidden="true" />}
+      <div className={`mx-auto max-w-3xl px-6 text-center ${dark ? 'py-12 md:py-16' : ''}`}>
         <h2 className="text-3xl text-text md:text-4xl">{headline}</h2>
         {body && <p className="mt-4 text-lg leading-relaxed text-body">{body}</p>}
         <Link

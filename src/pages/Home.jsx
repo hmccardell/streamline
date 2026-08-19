@@ -7,9 +7,9 @@ import { ROUTES } from '../config/routes'
 const processAuditId = serviceSlug('Process Audit')
 
 const valueProps = [
-  { title: 'We solve the problem', description: 'We design and build automations that eliminate manual, repetitive work.' },
-  { title: 'We explain the solution', description: 'Every engagement includes documentation and a handoff. Your team will understand what was built and why.' },
-  { title: 'We train your people', description: 'Hands-on AI and technical training built around your actual tools, not generic overviews.' },
+  { title: 'We solve the problem', description: 'We design and build automations that eliminate manual, repetitive work.', accent: 'var(--color-brand-purple)' },
+  { title: 'We explain the solution', description: 'Every engagement includes documentation and a handoff. Your team will understand what was built and why.', accent: 'var(--color-brand-blue)' },
+  { title: 'We train your people', description: 'Hands-on AI and technical training built around your actual tools, not generic overviews.', accent: 'var(--color-brand-teal)' },
 ]
 
 const smbJourneySteps = [
@@ -22,11 +22,12 @@ const smbJourneySteps = [
 export default function Home() {
   return (
     <>
-      <section className="hero-glow py-12 md:py-16">
+      <section className="hero-glow pt-12 pb-6 md:pt-16 md:pb-8">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-3xl leading-tight text-text md:text-5xl md:leading-tight">
             We eliminate the inefficiencies slowing your business down — and make sure your team understands the solution.
           </h1>
+          <div className="brand-divider-fade mx-auto mt-8 max-w-xl" aria-hidden="true" />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-body">
             Technology consulting and training for small businesses across the Gulf Coast.
           </p>
@@ -41,11 +42,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-3">
             {valueProps.map((item) => (
-              <div key={item.title} className="surface-card card-accent rounded-lg bg-surface p-8">
+              <div
+                key={item.title}
+                className="surface-card card-accent rounded-lg bg-surface p-8"
+                style={{ '--card-accent': item.accent }}
+              >
                 <h2 className="text-xl text-text">{item.title}</h2>
                 <p className="mt-3 leading-relaxed text-body">{item.description}</p>
               </div>

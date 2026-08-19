@@ -3,7 +3,8 @@ import { ROUTES } from '../config/routes'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-text/8 bg-bg text-body">
+    <footer className="bg-bg text-body">
+      <div className="brand-divider" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>

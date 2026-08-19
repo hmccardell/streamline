@@ -1,46 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  /* Deep navy-charcoal backgrounds */
-  --color-bg: #141c28;
-  --color-surface: #1e2d42;
-  --color-surface-alt: #182536;
+  /* Near-black backgrounds from the brand plates */
+  --color-bg: #050508;
+  --color-surface: #12121a;
+  --color-surface-alt: #0c0c14;
 
-  /* Text hierarchy — warm headings, soft body (not all electric blue) */
-  --color-text: #f0f4f8;
-  --color-body: #b8c5d4;
-  --color-subtle: #7d8fa3;
-  --color-disabled: #566575;
-  --color-text-secondary: #8ebfff;
+  /* White headings, readable gray body (WCAG AA on dark surfaces) */
+  --color-text: #ffffff;
+  --color-body: #c5c5ce;
+  --color-subtle: #a3a3ae;
+  --color-disabled: #4a4a54;
+  --color-text-secondary: #06e9ec;
 
-  /* Warm gold — CTAs, taglines, step markers (original brand accent) */
-  --color-accent: #c9922a;
-  --color-accent-hover: #dbaa42;
-  --color-on-accent: #141c28;
+  /* Deep purple for solid fills. Use accent-text for copy on dark backgrounds. */
+  --color-accent: #5c14c8;
+  --color-accent-hover: #6f22e0;
+  --color-accent-light: #6f22e0;
+  --color-accent-text: #c9a0ff;
+  --color-on-accent: #ffffff;
 
-  /* Light blue — links and secondary highlights only */
-  --color-highlight: #5eb8ff;
-  --color-highlight-hover: #7ec8ff;
+  /* Logo cyan — links and secondary highlights */
+  --color-highlight: #06e9ec;
+  --color-highlight-hover: #5aeff2;
 
-  /* Alert callouts */
-  --color-warning: #ffb65e;
-  --color-warning-hover: #ffc47a;
+  /* Gradient stops sampled from the logo */
+  --color-brand-purple: #8430f1;
+  --color-brand-indigo: #6a48ee;
+  --color-brand-blue: #3d72ea;
+  --color-brand-teal: #06e9ec;
+
+  /* Alert callouts — kept distinct from the brand gradient */
+  --color-warning: #e8a54b;
+  --color-warning-hover: #f0b86a;
 
   /* Legacy aliases */
-  --color-navy: #f0f4f8;
-  --color-navy-light: #1e2d42;
-  --color-cream: #f0f4f8;
-  --color-cream-dark: #182536;
-  --color-white: #1e2d42;
-  --color-amber: #c9922a;
-  --color-amber-hover: #dbaa42;
+  --color-navy: #ffffff;
+  --color-navy-light: #12121a;
+  --color-cream: #ffffff;
+  --color-cream-dark: #0c0c14;
+  --color-white: #12121a;
+  --color-amber: #5c14c8;
+  --color-amber-hover: #6f22e0;
 
-  --font-serif: "DM Serif Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --gradient-brand: linear-gradient(90deg, #8430f1 0%, #3d72ea 48%, #06e9ec 100%);
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -51,31 +63,55 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: var(--font-sans);
   font-weight: 600;
   color: var(--color-text);
 }
 
-h2, h3, h4 {
-  font-family: var(--font-serif);
-  color: var(--color-text);
-}
-
 .hero-glow {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(94 184 255 / 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgb(201 146 42 / 0.06), transparent),
-    linear-gradient(180deg, #182536 0%, var(--color-bg) 100%);
+    radial-gradient(ellipse 80% 55% at 50% -15%, rgb(132 48 241 / 0.2), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 0%, rgb(6 233 236 / 0.1), transparent 60%),
+    var(--color-bg);
 }
 
 .surface-card {
-  border: 1px solid rgb(240 244 248 / 0.08);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.4);
 }
 
 .card-accent {
-  border-top: 3px solid var(--color-accent);
+  position: relative;
+}
+
+.card-accent::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  background: var(--card-accent, var(--color-brand-purple));
+}
+
+.brand-divider {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border: 0;
+  background: var(--gradient-brand);
+}
+
+.brand-divider-fade {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border: 0;
+  background: var(--gradient-brand);
+  mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
 }
 
 input:-webkit-autofill,

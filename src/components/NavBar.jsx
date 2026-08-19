@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { ROUTES } from '../config/routes'
-import SiteLogo from './SiteLogo'
 
-const headerText = 'font-sans text-sm font-medium text-text transition-colors hover:text-highlight'
+const headerText = 'text-sm font-medium text-text transition-colors hover:text-highlight'
 
 const navLinkClass = ({ isActive }) =>
-  `font-sans text-sm font-medium transition-colors hover:text-highlight ${
+  `text-sm font-medium transition-colors hover:text-highlight ${
     isActive ? 'text-highlight' : 'text-text'
   }`
 
@@ -17,15 +16,14 @@ export default function NavBar() {
   const closeMobile = () => setMobileOpen(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-text/8 bg-bg/95 shadow-md backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-bg/95 shadow-md backdrop-blur-sm">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link
           to={ROUTES.home}
-          className="flex shrink-0 items-center gap-3 transition-opacity hover:opacity-90"
+          className="shrink-0 text-sm font-semibold text-text transition-opacity hover:opacity-90 sm:text-base"
           onClick={closeMobile}
         >
-          <SiteLogo variant="mark" />
-          <span className="font-sans text-sm font-semibold text-text sm:text-base">Streamline South</span>
+          Streamline South
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -88,6 +86,7 @@ export default function NavBar() {
           </div>
         </div>
       )}
+      <div className="brand-divider" aria-hidden="true" />
     </header>
   )
 }

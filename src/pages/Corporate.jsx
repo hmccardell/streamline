@@ -60,6 +60,7 @@ export default function Corporate() {
           <h1 className="text-3xl text-text md:text-5xl">
             Technical training built for your team, your tools, and your goals.
           </h1>
+          <div className="brand-divider-fade mx-auto mt-8 max-w-xl" aria-hidden="true" />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-body">
             Not off-the-shelf curriculum. Every engagement is designed around your
             environment and your people.

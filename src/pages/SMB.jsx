@@ -59,6 +59,7 @@ export default function SMB() {
           <h1 className="text-3xl text-text md:text-5xl">
             Practical technology help for small businesses.
           </h1>
+          <div className="brand-divider-fade mx-auto mt-8 max-w-xl" aria-hidden="true" />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-body">
             From process audits to hands-on AI training — built for businesses with 5–50
             employees in Mississippi, Alabama, and Louisiana.
@@ -69,14 +70,14 @@ export default function SMB() {
       {/* Industries */}
       <section className="border-b border-text/10 py-8">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wider text-subtle">
+          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wider text-body">
             Industries We Serve
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {smbIndustries.map((industry) => (
               <span
                 key={industry}
-                className="rounded-full border border-text/15 bg-surface px-4 py-2 text-sm text-body"
+                className="rounded-full border border-text/25 bg-surface px-4 py-2 text-sm font-medium text-text"
               >
                 {industry}
               </span>
