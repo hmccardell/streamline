@@ -1,6 +1,17 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ROUTES } from '../config/routes'
+import { ROUTES, DEMOS_URL } from '../config/routes'
+
+const demosLinkClass =
+  'inline-flex items-center gap-1.5 rounded-md bg-accent px-4 py-2 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover'
+
+function DemosArrow() {
+  return (
+    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7m10 0v10" />
+    </svg>
+  )
+}
 
 const headerText = 'text-sm font-medium text-text transition-colors hover:text-highlight'
 
@@ -53,6 +64,10 @@ export default function NavBar() {
           </div>
           <NavLink to={ROUTES.about} className={navLinkClass}>About</NavLink>
           <NavLink to={ROUTES.contact} className={navLinkClass}>Contact</NavLink>
+          <a href={DEMOS_URL} target="_blank" rel="noopener" className={demosLinkClass}>
+            Live demos
+            <DemosArrow />
+          </a>
         </div>
 
         <button
@@ -84,6 +99,17 @@ export default function NavBar() {
           <div className="mt-2">
             <NavLink to={ROUTES.contact} className={navLinkClass} onClick={closeMobile}>Contact</NavLink>
           </div>
+          <div className="my-3 border-t border-text/8" />
+          <a
+            href={DEMOS_URL}
+            target="_blank"
+            rel="noopener"
+            className={demosLinkClass}
+            onClick={closeMobile}
+          >
+            Live demos
+            <DemosArrow />
+          </a>
         </div>
       )}
       <div className="brand-divider" aria-hidden="true" />

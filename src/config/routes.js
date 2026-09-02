@@ -1,5 +1,8 @@
 export const SITE_URL = 'https://streamlinesouth.com'
 
+/** External demos site — separate subdomain, opens in a new tab. */
+export const DEMOS_URL = 'https://demos.streamlinesouth.com'
+
 /** Canonical paths with trailing slashes (Cloudflare Pages serves folder routes this way). */
 export const ROUTES = {
   home: '/',
