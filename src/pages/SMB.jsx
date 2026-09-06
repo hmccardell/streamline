@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import FormattedText from '../components/FormattedText'
 import { serviceSlug } from '../components/ServiceSectionNav'
 import { ROUTES } from '../config/routes'
-import { smbServices } from '../data/smbServices'
+import { smbServices, customAppShowcase } from '../data/smbServices'
 
 const processAuditId = serviceSlug('Process Audit')
 
@@ -52,6 +52,27 @@ function CapIcon() {
   )
 }
 
+function WindowIcon() {
+  return (
+    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="6.5" y1="6.5" x2="6.5" y2="6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <line x1="9.5" y1="6.5" x2="9.5" y2="6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function InstagramIcon() {
+  return (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="17" cy="7" r="1" fill="currentColor" />
+    </svg>
+  )
+}
+
 function ChevronIcon() {
   return (
     <svg
@@ -68,6 +89,7 @@ function ChevronIcon() {
 const SERVICE_ICONS = {
   'Process Audit': SearchIcon,
   'Process Automation Implementation': BoltIcon,
+  'Custom Application': WindowIcon,
   'AI Readiness Workshop': BulbIcon,
   'AI Advisory Retainer': CompassIcon,
   'Technical Training': CapIcon,
@@ -149,6 +171,61 @@ export default function SMB() {
               )
             })}
           </div>
+
+          <article
+            className="surface-card card-accent mt-10 overflow-hidden rounded-lg bg-surface p-6 md:p-8"
+            style={{ '--card-accent': 'var(--gradient-brand)' }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-wider text-highlight">
+              {customAppShowcase.eyebrow}
+            </p>
+            <h2 className="mt-2 text-2xl text-text md:text-3xl">{customAppShowcase.title}</h2>
+
+            {customAppShowcase.instagram ? (
+              <a
+                href={customAppShowcase.instagram.url}
+                target="_blank"
+                rel="noopener"
+                className="mt-3 inline-flex items-center gap-2 rounded-full border border-text/15 px-3 py-1 text-xs font-medium text-body transition-colors hover:border-highlight/50 hover:text-text"
+              >
+                <InstagramIcon />
+                {customAppShowcase.instagram.label}
+              </a>
+            ) : null}
+
+            {customAppShowcase.screenshot?.src ? (
+              <img
+                src={customAppShowcase.screenshot.src}
+                alt={customAppShowcase.screenshot.alt}
+                className="mt-6 w-full rounded-lg border border-white/10"
+              />
+            ) : (
+              <div className="mt-6 flex aspect-[16/10] items-center justify-center rounded-lg border border-dashed border-text/25 bg-surface-alt text-xs text-subtle">
+                Screenshot coming soon
+              </div>
+            )}
+
+            <div className="mt-6 space-y-3">
+              {customAppShowcase.body.map((paragraph, i) => (
+                <p key={i} className="text-sm leading-relaxed text-body">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            {customAppShowcase.testimonial ? (
+              <figure className="mt-6 rounded-lg border border-accent/30 bg-accent/10 p-5">
+                <blockquote className="text-sm leading-relaxed text-body">
+                  &ldquo;{customAppShowcase.testimonial.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-2 text-xs font-semibold text-accent-text">
+                  {customAppShowcase.testimonial.attribution}
+                </figcaption>
+              </figure>
+            ) : null}
+
+            <p className="mt-5 text-xs text-subtle">{customAppShowcase.footnote}</p>
+          </article>
         </div>
       </section>
 

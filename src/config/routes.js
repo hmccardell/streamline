@@ -9,6 +9,7 @@ export const SCHEDULING_URL = 'https://demos.streamlinesouth.com/scheduling'
 export const ROUTES = {
   home: '/',
   streamlines: '/streamlines/',
+  schedulingStreamline: '/streamlines/scheduling/',
   smb: '/smb/',
   corporate: '/corporate/',
   about: '/about/',
@@ -16,7 +17,15 @@ export const ROUTES = {
 }
 
 /** Paths prerendered at build time — keep in sync with AppShell Routes */
-export const ROUTE_PATHS = ['/', '/streamlines', '/smb', '/corporate', '/about', '/contact']
+export const ROUTE_PATHS = [
+  '/',
+  '/streamlines',
+  '/streamlines/scheduling',
+  '/smb',
+  '/corporate',
+  '/about',
+  '/contact',
+]
 
 export function normalizeRoutePath(pathname) {
   if (!pathname || pathname === '/') return '/'
@@ -55,6 +64,13 @@ export const PAGE_SEO = {
       'Ready-made automation fixes for everyday small-business headaches: online booking, missed-call text-back, review requests, invoicing, and more. Try before you buy.',
     priority: '0.9',
     changefreq: 'weekly',
+  },
+  '/streamlines/scheduling': {
+    title: 'Scheduling & Booking Automation | Streamline South',
+    description:
+      'A branded booking page connected to your calendar, with automated text and email confirmations. Live in days, from $750, for Gulf Coast small businesses.',
+    priority: '0.8',
+    changefreq: 'monthly',
   },
   '/smb': {
     title: 'Process Audit & Automation | Mississippi SMBs',

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import FormattedText from '../components/FormattedText'
 import { serviceSlug } from '../components/ServiceSectionNav'
 import { ROUTES } from '../config/routes'
-import { corporateServices } from '../data/corporateServices'
+import { corporateServices, workshopCaseStudy } from '../data/corporateServices'
 
 const workshopId = serviceSlug('Custom Technical Workshop')
 const curriculumId = serviceSlug('Curriculum Design')
@@ -131,6 +131,44 @@ export default function Corporate() {
               )
             })}
           </div>
+
+          <article
+            className="surface-card card-accent mt-10 overflow-hidden rounded-lg bg-surface p-6 md:p-8"
+            style={{ '--card-accent': 'var(--gradient-brand)' }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-wider text-highlight">
+              {workshopCaseStudy.eyebrow}
+            </p>
+            <h2 className="mt-2 text-2xl text-text md:text-3xl">{workshopCaseStudy.title}</h2>
+
+            <div className="mt-4 space-y-3">
+              {workshopCaseStudy.body.map((paragraph, i) => (
+                <p key={i} className="text-sm leading-relaxed text-body">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            <dl className="mt-6 grid grid-cols-2 gap-4 border-y border-text/10 py-5 sm:grid-cols-4">
+              {workshopCaseStudy.stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="text-lg font-semibold text-highlight">{stat.value}</dt>
+                  <dd className="mt-0.5 text-xs text-body">{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="mt-6 rounded-lg border border-accent/30 bg-accent/10 p-5">
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-accent-text">
+                {workshopCaseStudy.highlight.label}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-body">
+                {workshopCaseStudy.highlight.content}
+              </p>
+            </div>
+
+            <p className="mt-5 text-xs text-subtle">{workshopCaseStudy.footnote}</p>
+          </article>
         </div>
       </section>
 

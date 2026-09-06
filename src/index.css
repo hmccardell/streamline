@@ -133,7 +133,8 @@ h1, h2, h3, h4 {
 .streamlines-cta,
 .smb-audit-cta,
 .corporate-scope-cta,
-.home-newsletter-cta {
+.home-newsletter-cta,
+.scheduling-checklist-cta {
   position: relative;
   background-color: var(--color-bg);
   background-size: cover;
@@ -169,11 +170,18 @@ h1, h2, h3, h4 {
   border-top: 1px solid var(--rule-automation-blue);
 }
 
+.scheduling-checklist-cta {
+  background-image: url("/automation-leak.png");
+  background-position: center 45%;
+  border-top: 1px solid var(--rule-automation-pink);
+}
+
 .streamlines-hero::before,
 .streamlines-cta::before,
 .smb-audit-cta::before,
 .corporate-scope-cta::before,
-.home-newsletter-cta::before {
+.home-newsletter-cta::before,
+.scheduling-checklist-cta::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -197,6 +205,10 @@ h1, h2, h3, h4 {
 
 .home-newsletter-cta::before {
   background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(61 114 234 / 0.2), transparent 74%);
+}
+
+.scheduling-checklist-cta::before {
+  background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(214 51 132 / 0.18), transparent 74%);
 }
 
 /* Ambient section lighting. The cyan/purple glow is not the section's

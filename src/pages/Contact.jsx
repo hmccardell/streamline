@@ -8,7 +8,7 @@ export default function Contact() {
           <h1 className="text-3xl text-text md:text-5xl">What&apos;s slowing you down?</h1>
           <div className="brand-divider-fade mx-auto mt-8 max-w-xl" aria-hidden="true" />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-body">
-            Bring us your pain points. We'll guide you to a solution.
+            Bring us your pain points. We'll give you options and help you decide on the best solution.
           </p>
         </div>
       </section>

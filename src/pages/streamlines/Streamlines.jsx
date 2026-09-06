@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { DEMOS_URL, ROUTES, SCHEDULING_URL } from '../config/routes'
-import { streamlines } from '../data/streamlines'
+import { ROUTES, SCHEDULING_URL } from '../../config/routes'
+import { streamlines } from '../../data/streamlines'
 
 const liveStreamline = streamlines.find((s) => s.status === 'live')
 const upcoming = streamlines.filter((s) => s.status === 'coming-soon')
@@ -28,10 +28,30 @@ function ExternalArrow() {
   )
 }
 
+function DemoSoonTag() {
+  return (
+    <span className="inline-flex flex-none items-center gap-1.5 rounded-full border border-text/15 bg-surface-alt px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-subtle">
+      <span className="h-1.5 w-1.5 rounded-full bg-accent-text/70" aria-hidden="true" />
+      Demo soon
+    </span>
+  )
+}
+
+function AutomationBlock({ logic, className = '' }) {
+  return (
+    <div className={`rounded-md border border-highlight/15 bg-highlight/5 px-3.5 py-3 ${className}`}>
+      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-highlight">
+        The automation
+      </p>
+      <p className="mt-1.5 text-sm leading-relaxed text-body">{logic}</p>
+    </div>
+  )
+}
+
 export default function Streamlines() {
   return (
     <>
-      <section className="streamlines-hero py-16 md:py-24">
+      <section className="streamlines-hero py-12 md:py-16">
         <div className="relative z-10 mx-auto max-w-2xl px-6">
           <div
             className="card-accent overflow-hidden rounded-2xl border border-white/10 bg-bg/95 px-6 py-10 text-left shadow-2xl backdrop-blur-md md:px-12 md:py-14"
@@ -80,7 +100,7 @@ export default function Streamlines() {
         </div>
       </section>
 
-      <section className="plate-glow-teal py-16 md:py-24">
+      <section className="plate-glow-teal py-12 md:py-16">
         <div className="mx-auto max-w-5xl px-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-highlight">Live demo</p>
           <article
@@ -93,60 +113,82 @@ export default function Streamlines() {
               {liveStreamline.logic}
             </p>
             <SplitRow streamline={liveStreamline} />
-            <a
-              href={SCHEDULING_URL}
-              target="_blank"
-              rel="noopener"
-              className="mt-7 inline-flex items-center gap-1.5 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover"
-            >
-              Try the live demo
-              <ExternalArrow />
-            </a>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={SCHEDULING_URL}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center justify-center gap-1.5 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover"
+              >
+                Try the live demo
+                <ExternalArrow />
+              </a>
+              <Link
+                to={ROUTES.schedulingStreamline}
+                className="inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-highlight transition-colors hover:text-highlight-hover"
+              >
+                See how it works
+              </Link>
+            </div>
           </article>
         </div>
       </section>
 
-      <section className="plate-deep py-16 md:py-24">
+      <section className="plate-deep py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-highlight">Demos in progress</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-highlight">The build list</p>
           <h2 className="mt-2 text-2xl text-text md:text-3xl">More streamlines we build on request.</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-body">
-            Every one of these is something we can build and run in your business today. What is still
-            in progress is the click-through demo for each one, so for now Appointment Bookings is the
-            only one you can try yourself. They are ranked by how universal the pain is, not by how
-            hard they are to build. Want us to build one for you, or move it up the demo list?{' '}
+            Every one of these is a streamline we can build and run in your business now. Want one
+            built for your business, or see a demo sooner?{' '}
             <Link to={ROUTES.contact} className="font-semibold text-highlight transition-colors hover:text-highlight-hover">
               Tell us which one
             </Link>
             .
           </p>
 
-          <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {upcoming.map((streamline, i) => (
-              <li
-                key={streamline.name}
-                className="surface-card relative overflow-hidden rounded-lg bg-surface"
-              >
-                <div className="pointer-events-none absolute right-0 top-0 h-28 w-28 overflow-hidden">
-                  <span className="absolute left-1/2 top-[30px] w-[150px] -translate-x-1/2 rotate-45 bg-warning py-1 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-bg shadow-lg">
-                    Demo soon
+          <ol className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {upcoming.map((streamline, i) => {
+              if (i === 0) {
+                return (
+                  <li key={streamline.name} className="sm:col-span-2 lg:col-span-3">
+                    <article
+                      className="card-accent surface-card rounded-lg bg-surface p-6 md:p-8"
+                      style={{ '--card-accent': 'var(--gradient-brand)' }}
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-subtle">
+                          {streamline.name}
+                        </span>
+                        <DemoSoonTag />
+                      </div>
+                      <p className="mt-3 max-w-2xl text-xl font-medium leading-snug text-text md:text-2xl">
+                        {streamline.pain}
+                      </p>
+                      <AutomationBlock logic={streamline.logic} className="mt-4 px-4 py-3.5" />
+                    </article>
+                  </li>
+                )
+              }
+                  
+              return (
+                <li
+                  key={streamline.name}
+                  className="surface-card flex flex-col rounded-lg bg-surface p-6 transition-colors hover:border-highlight/30"
+                >
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-subtle">
+                    {streamline.name}
                   </span>
-                </div>
-                <div className="p-6 grayscale">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-text/25 text-xs font-semibold text-body">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <h3 className="mt-4 text-lg text-text">{streamline.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-body">{streamline.pain}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-subtle">{streamline.logic}</p>
-                </div>
-              </li>
-            ))}
+                  <p className="mt-3 text-base font-medium leading-snug text-text">{streamline.pain}</p>
+                  <AutomationBlock logic={streamline.logic} className="mt-4" />
+                </li>
+              )
+            })}
           </ol>
         </div>
       </section>
 
-      <section className="streamlines-cta py-16 md:py-24">
+      <section className="streamlines-cta py-12 md:py-16">
         <div className="relative z-10 mx-auto max-w-2xl px-6">
           <div
             className="card-accent overflow-hidden rounded-2xl border border-white/10 bg-bg/95 px-6 py-10 text-center shadow-2xl backdrop-blur-md md:px-12 md:py-14"

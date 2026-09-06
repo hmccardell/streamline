@@ -16,7 +16,7 @@ export const streamlines = [
   {
     name: 'Missed-Call Text-Back',
     status: 'coming-soon',
-    pain: 'A ringing phone nobody answers is a lead calling the next name on the list.',
+    pain: 'A call that comes in while you are busy is easy to lose track of before you can call back.',
     logic: 'If a call goes unanswered, the caller gets an instant text and a lead lands on the dashboard.',
     youSee: 'A text within seconds of hanging up.',
     dashboardSee: 'A new lead card tagged "missed call."',

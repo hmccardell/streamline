@@ -45,6 +45,28 @@ export const smbServices = [
   },
   {
     step: 3,
+    name: 'Custom Application',
+    tagline: 'Software built for exactly how you work.',
+    description:
+      'When spreadsheets, shared docs, or an off-the-shelf tool that almost fits are holding you back, we build a system around your actual process. It can run on its own or connect to the tools you already use.',
+    whoItsFor:
+      'Businesses that have outgrown spreadsheets or a generic tool and need software shaped to their own process, either as a standalone system or integrated with what they already run.',
+    whatsIncluded:
+      'Requirements sessions with you, data modeling, a working application built to your spec, testing, and deployment. Standalone or integrated with your existing tools. Includes documentation, source code, and a handoff session.',
+    whatItsNot:
+      'This is not a rebuild of something a commercial product already does well, an open-ended staff-augmentation contract, or ongoing managed hosting. Scope is defined upfront and delivered against.',
+    deliverable: 'A deployed application with documentation and source your team keeps.',
+    timeline: 'A simple app can be live in a matter of days. Larger builds run 4–10 weeks depending on scope.',
+    investment: 'Fixed fee based on scope: get in touch.',
+    priceRange: 'By quote',
+    example: {
+      label: 'See an example',
+      content:
+        'A local educator preparing to launch her own business needed her market research organized. We worked through the requirements with her and built a custom catalog app she uses daily. See the project below.',
+    },
+  },
+  {
+    step: 4,
     name: 'AI Readiness Workshop',
     tagline: 'Practical AI adoption, not hype.',
     description:
@@ -66,7 +88,7 @@ export const smbServices = [
     },
   },
   {
-    step: 4,
+    step: 5,
     name: 'AI Advisory Retainer',
     tagline: 'A trusted technology advisor, without the full-time cost.',
     description:
@@ -88,7 +110,7 @@ export const smbServices = [
     },
   },
   {
-    step: 5,
+    step: 6,
     name: 'Technical Training',
     tagline: 'Build capability that stays in your organization.',
     description:
@@ -118,3 +140,30 @@ export const smbIndustries = [
   'Accounting',
   'Construction & Contracting',
 ]
+
+// Client project shown under the SMB services, as a concrete example of the
+// Custom Application offering.
+export const customAppShowcase = {
+  eyebrow: 'Recent project · Custom Application',
+  title: 'A research catalog for a founder getting ready to launch',
+  // The app itself sits behind a login and has no public domain yet, so the
+  // Instagram page is the only public-facing part of the business.
+  instagram: {
+    label: 'Charmed Slime Shop on Instagram',
+    url: 'https://www.instagram.com/charmed_slime_shop/',
+  },
+  // TODO: drop a real screenshot in /public and set `src` (e.g. '/charmed-slime-shop.png').
+  screenshot: {
+    src: null,
+    alt: 'The application: a searchable catalog of entries with photos, attributes, and ratings.',
+  },
+  body: [
+    'A local educator preparing to launch Charmed Slime Shop, her own slime business, needed a better way to organize her market research than a growing pile of spreadsheets and photos. She wanted to catalog what is already on the market, compare products side by side, and keep her notes somewhere she could actually search.',
+    'We worked with her to define what mattered: which attributes to capture, how she wanted to browse and filter, and what should be a fixed list versus a free-form note. Then we built it, a custom web app where every entry has its own details, photos, and rating, with admin-managed categories so the data stays consistent and room to add new fields as her needs change.',
+    'It runs as its own system, secured behind a login, and deployed on free-tier hosting to keep running costs minimal while the business is getting off the ground. When the data or traffic grows, it scales up without a rebuild. She uses it now as part of her day-to-day work toward launch.',
+  ],
+  // TODO: add when received: { quote: '...', attribution: 'Owner, Charmed Slime Shop' }
+  testimonial: null,
+  footnote:
+    'The app sits behind a login while Charmed Slime Shop gets ready to launch. A custom application for you can stand alone like this or connect to tools you already use.',
+}

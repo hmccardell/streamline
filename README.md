@@ -78,7 +78,14 @@ click the link. Signups arrive in Buttondown tagged `website`.
 | Route | Page |
 | --- | --- |
 | `/` | Home |
+| `/streamlines` | Common Streamlines (index) |
+| `/streamlines/scheduling` | Scheduling & Booking |
 | `/smb` | SMB Services |
 | `/corporate` | Corporate Services |
 | `/about` | About |
 | `/contact` | Contact |
+
+Individual streamline pages live in `src/pages/streamlines/`. The listing
+(`Streamlines.jsx`) and each streamline detail page (e.g. `Scheduling.jsx`) sit
+side by side there; add a new streamline as a new file in that folder plus a
+route in `src/AppShell.jsx` and `src/config/routes.js`.

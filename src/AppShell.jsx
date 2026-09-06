@@ -4,7 +4,8 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
-import Streamlines from './pages/Streamlines'
+import Streamlines from './pages/streamlines/Streamlines'
+import Scheduling from './pages/streamlines/Scheduling'
 import SMB from './pages/SMB'
 import Corporate from './pages/Corporate'
 import About from './pages/About'
@@ -22,6 +23,7 @@ export default function AppShell() {
             <Route key={path} path={path} element={<Navigate to={`${path}/`} replace />} />
           ))}
           <Route path={ROUTES.streamlines} element={<Streamlines />} />
+          <Route path={ROUTES.schedulingStreamline} element={<Scheduling />} />
           <Route path={ROUTES.smb} element={<SMB />} />
           <Route path={ROUTES.corporate} element={<Corporate />} />
           <Route path={ROUTES.about} element={<About />} />

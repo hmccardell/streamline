@@ -1,6 +1,12 @@
 // POST /api/subscribe  { email: string, company?: string }
 // Proxies newsletter signups to Buttondown. The API key stays server-side as
 // the BUTTONDOWN_API_KEY secret and never reaches the browser.
+//
+// On success: { ok: true, status } where status is 'created' (new subscriber,
+// confirmation email on the way) or 'already_subscribed'. The client uses that
+// only to pick the right confirmation copy; any page-specific resource (e.g. the
+// scheduling checklist PDF) is handed to the visitor on the page, not emailed,
+// since tag/metadata-driven automations need a paid Buttondown plan.
 
 const BUTTONDOWN_API = 'https://api.buttondown.email/v1/subscribers'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -26,7 +32,7 @@ export async function handleSubscribe(request, env) {
   }
 
   // Honeypot: real people leave this blank. Pretend success so bots do not retry.
-  if (payload.company) return json({ ok: true })
+  if (payload.company) return json({ ok: true, status: 'already_subscribed' })
 
   const email = String(payload.email || '').trim().toLowerCase()
   if (!EMAIL_RE.test(email)) {
@@ -54,14 +60,14 @@ export async function handleSubscribe(request, env) {
     return json({ ok: false, error: 'upstream_unreachable' }, 502)
   }
 
-  if (res.ok) return json({ ok: true })
+  if (res.ok) return json({ ok: true, status: 'created' })
 
   const detail = await res.text()
 
   // Already on the list (or pending confirmation): nothing to do, treat as
   // success for the visitor rather than showing an error.
   if ((res.status === 400 || res.status === 409) && /already|exist|unique/i.test(detail)) {
-    return json({ ok: true })
+    return json({ ok: true, status: 'already_subscribed' })
   }
 
   console.error(`subscribe: Buttondown responded ${res.status}: ${detail}`)
