@@ -149,7 +149,7 @@ export const customAppShowcase = {
   // The app itself sits behind a login and has no public domain yet, so the
   // Instagram page is the only public-facing part of the business.
   instagram: {
-    label: 'Charmed Slime Shop on Instagram',
+    label: '@charmed_slime_shop on Instagram',
     url: 'https://www.instagram.com/charmed_slime_shop/',
   },
   // TODO: drop a real screenshot in /public and set `src` (e.g. '/charmed-slime-shop.png').

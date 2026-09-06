@@ -24,12 +24,13 @@ export function getPageMeta(pathname) {
     canonicalUrl: toCanonicalUrl(path),
     ogImage: DEFAULT_SEO.ogImage,
     ogType: DEFAULT_SEO.ogType,
+    heroImage: seo.heroImage,
     jsonLd: path === '/' ? LOCAL_BUSINESS_JSON_LD : undefined,
   }
 }
 
 export function renderHeadHtml(meta) {
-  const { title, description, canonicalUrl, ogImage, ogType, jsonLd } = meta
+  const { title, description, canonicalUrl, ogImage, ogType, heroImage, jsonLd } = meta
 
   const tags = [
     `<title>${escapeHtml(title)}</title>`,
@@ -46,6 +47,12 @@ export function renderHeadHtml(meta) {
     `<meta name="twitter:description" content="${escapeHtml(description)}">`,
     `<meta name="twitter:image" content="${escapeHtml(ogImage)}">`,
   ]
+
+  if (heroImage) {
+    tags.push(
+      `<link rel="preload" as="image" href="${escapeHtml(heroImage)}" type="image/webp" fetchpriority="high">`,
+    )
+  }
 
   if (jsonLd) {
     tags.push(`<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`)

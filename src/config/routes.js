@@ -64,6 +64,9 @@ export const PAGE_SEO = {
       'Ready-made automation fixes for everyday small-business headaches: online booking, missed-call text-back, review requests, invoicing, and more. Try before you buy.',
     priority: '0.9',
     changefreq: 'weekly',
+    // Above-the-fold section photo, preloaded so it does not pop in. Keep in
+    // sync with the .streamlines-hero rule in index.css.
+    heroImage: '/automation-pink.webp',
   },
   '/streamlines/scheduling': {
     title: 'Scheduling & Booking Automation | Streamline South',
@@ -99,6 +102,8 @@ export const PAGE_SEO = {
       'Talk with us about process audits, automation, or AI training for your Gulf Coast business. No pressure, no jargon.',
     priority: '0.8',
     changefreq: 'monthly',
+    // See .contact-photo in index.css.
+    heroImage: '/automation-cyan2.webp',
   },
 }
 

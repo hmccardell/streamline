@@ -18,8 +18,7 @@ export default function Contact() {
         style={{ borderColor: 'var(--rule-automation-cyan)' }}
       >
         <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/automation-cyan2.png)' }}
+          className="contact-photo pointer-events-none absolute inset-0 bg-cover bg-center"
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-xl px-6">

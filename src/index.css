@@ -140,38 +140,79 @@ h1, h2, h3, h4 {
   background-size: cover;
 }
 
+/* Photo formats: the encoded variants are built by scripts/optimize-images.mjs
+   from the PNG sources. The two above-the-fold photos (.streamlines-hero and
+   Contact's section, see .contact-photo) are webp-only and get a matching
+   <link rel="preload"> in the page head, so there is one predictable fetch and
+   no redundant download. The below-the-fold CTAs use image-set() to take avif
+   where supported and defer their fetch via content-visibility. */
 .streamlines-hero {
-  background-image: url("/automation-pink.png");
+  background-image: url("/automation-pink.webp");
   background-position: center;
   border-bottom: 1px solid var(--rule-automation-pink);
 }
 
+/* Contact page: full-bleed photo behind the form card. Above the fold on a
+   short page, so webp-only with a preload, matching .streamlines-hero. */
+.contact-photo {
+  background-image: url("/automation-cyan2.webp");
+}
+
+.streamlines-cta,
+.smb-audit-cta,
+.corporate-scope-cta,
+.home-newsletter-cta,
+.scheduling-checklist-cta {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 480px;
+}
+
 .streamlines-cta {
-  background-image: url("/automation-violet.png");
+  background-image: url("/automation-violet.webp");
+  background-image: image-set(
+    url("/automation-violet.avif") type("image/avif"),
+    url("/automation-violet.webp") type("image/webp")
+  );
   background-position: center 62%;
   border-top: 1px solid var(--rule-automation-violet);
 }
 
 .smb-audit-cta {
-  background-image: url("/automation-blue-green2.png");
+  background-image: url("/automation-blue-green2.webp");
+  background-image: image-set(
+    url("/automation-blue-green2.avif") type("image/avif"),
+    url("/automation-blue-green2.webp") type("image/webp")
+  );
   background-position: center 60%;
   border-top: 1px solid var(--rule-automation-cyan);
 }
 
 .corporate-scope-cta {
-  background-image: url("/automation-purple2.png");
+  background-image: url("/automation-purple2.webp");
+  background-image: image-set(
+    url("/automation-purple2.avif") type("image/avif"),
+    url("/automation-purple2.webp") type("image/webp")
+  );
   background-position: center 55%;
   border-top: 1px solid var(--rule-automation-purple);
 }
 
 .home-newsletter-cta {
-  background-image: url("/automation-blue2.png");
+  background-image: url("/automation-blue2.webp");
+  background-image: image-set(
+    url("/automation-blue2.avif") type("image/avif"),
+    url("/automation-blue2.webp") type("image/webp")
+  );
   background-position: center 55%;
   border-top: 1px solid var(--rule-automation-blue);
 }
 
 .scheduling-checklist-cta {
-  background-image: url("/automation-leak.png");
+  background-image: url("/automation-leak.webp");
+  background-image: image-set(
+    url("/automation-leak.avif") type("image/avif"),
+    url("/automation-leak.webp") type("image/webp")
+  );
   background-position: center 45%;
   border-top: 1px solid var(--rule-automation-pink);
 }

@@ -73,7 +73,7 @@ export default function Home() {
           <p className="text-xs font-semibold uppercase tracking-wider text-highlight">Ready-made automations</p>
           <h2 className="mt-2 text-2xl text-text md:text-3xl">Popular Streamlines</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-body">
-            Pre-built fixes for specific, common headaches. Not sure which one fits?{' '}
+            Specific patterns for common headaches. Not sure which one fits?{' '}
             <Link to={`${ROUTES.smb}#${processAuditId}`} className="font-semibold text-highlight transition-colors hover:text-highlight-hover">
               Start with a Process Audit
             </Link>
