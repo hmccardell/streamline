@@ -3,9 +3,12 @@ export const SITE_URL = 'https://streamlinesouth.com'
 /** External demos site — separate subdomain, opens in a new tab. */
 export const DEMOS_URL = 'https://demos.streamlinesouth.com'
 
+export const SCHEDULING_URL = 'https://demos.streamlinesouth.com/scheduling'
+
 /** Canonical paths with trailing slashes (Cloudflare Pages serves folder routes this way). */
 export const ROUTES = {
   home: '/',
+  streamlines: '/streamlines/',
   smb: '/smb/',
   corporate: '/corporate/',
   about: '/about/',
@@ -13,7 +16,7 @@ export const ROUTES = {
 }
 
 /** Paths prerendered at build time — keep in sync with AppShell Routes */
-export const ROUTE_PATHS = ['/', '/smb', '/corporate', '/about', '/contact']
+export const ROUTE_PATHS = ['/', '/streamlines', '/smb', '/corporate', '/about', '/contact']
 
 export function normalizeRoutePath(pathname) {
   if (!pathname || pathname === '/') return '/'
@@ -44,6 +47,13 @@ export const PAGE_SEO = {
     description:
       'Hattiesburg-based process consulting & AI readiness for Gulf Coast SMBs. Audits, automation, and training.',
     priority: '1.0',
+    changefreq: 'weekly',
+  },
+  '/streamlines': {
+    title: 'Common Streamlines | Pre-built SMB Automations',
+    description:
+      'Ready-made automation fixes for everyday small-business headaches: online booking, missed-call text-back, review requests, invoicing, and more. Try before you buy.',
+    priority: '0.9',
     changefreq: 'weekly',
   },
   '/smb': {

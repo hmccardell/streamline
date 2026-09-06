@@ -48,6 +48,15 @@
 
 :root {
   --gradient-brand: linear-gradient(90deg, #8430f1 0%, #3d72ea 48%, #06e9ec 100%);
+
+  /* Horizontal rules that meet an automation photo pick up that photo's hue
+     instead of a neutral grey. Each is tuned to about the same lightness as
+     --color-disabled so the seam still reads. */
+  --rule-automation-pink: #6b3566;
+  --rule-automation-violet: #513a99;
+  --rule-automation-cyan: #1f5a63;
+  --rule-automation-blue: #2a4f7d;
+  --rule-automation-purple: #4a2e7a;
 }
 
 html {
@@ -112,6 +121,123 @@ h1, h2, h3, h4 {
   background: var(--gradient-brand);
   mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+}
+
+/* Full-bleed automation photos: the image runs edge to edge with `cover`, a
+   hue-matched rule marks where it meets a plain section, and a radial glow in
+   the photo's colour sits behind the centred card. Used by the Streamlines
+   hero (pink) and CTA (violet), the SMB "Start with the Audit" CTA
+   (blue-green), the Corporate "scope your engagement" CTA (purple), and
+   the Home newsletter CTA (blue). */
+.streamlines-hero,
+.streamlines-cta,
+.smb-audit-cta,
+.corporate-scope-cta,
+.home-newsletter-cta {
+  position: relative;
+  background-color: var(--color-bg);
+  background-size: cover;
+}
+
+.streamlines-hero {
+  background-image: url("/automation-pink.png");
+  background-position: center;
+  border-bottom: 1px solid var(--rule-automation-pink);
+}
+
+.streamlines-cta {
+  background-image: url("/automation-violet.png");
+  background-position: center 62%;
+  border-top: 1px solid var(--rule-automation-violet);
+}
+
+.smb-audit-cta {
+  background-image: url("/automation-blue-green2.png");
+  background-position: center 60%;
+  border-top: 1px solid var(--rule-automation-cyan);
+}
+
+.corporate-scope-cta {
+  background-image: url("/automation-purple2.png");
+  background-position: center 55%;
+  border-top: 1px solid var(--rule-automation-purple);
+}
+
+.home-newsletter-cta {
+  background-image: url("/automation-blue2.png");
+  background-position: center 55%;
+  border-top: 1px solid var(--rule-automation-blue);
+}
+
+.streamlines-hero::before,
+.streamlines-cta::before,
+.smb-audit-cta::before,
+.corporate-scope-cta::before,
+.home-newsletter-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.streamlines-hero::before {
+  background: radial-gradient(ellipse 78% 62% at 50% 46%, rgb(6 233 236 / 0.16), transparent 70%);
+}
+
+.streamlines-cta::before {
+  background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(132 48 241 / 0.22), transparent 74%);
+}
+
+.smb-audit-cta::before {
+  background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(6 233 236 / 0.16), transparent 74%);
+}
+
+.corporate-scope-cta::before {
+  background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(132 48 241 / 0.2), transparent 74%);
+}
+
+.home-newsletter-cta::before {
+  background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(61 114 234 / 0.2), transparent 74%);
+}
+
+/* Ambient section lighting. The cyan/purple glow is not the section's
+   background: it floats on a full-bleed ::before layer behind the content and
+   fades all the way to transparent before it reaches any edge, so the section
+   never shows a rectangular gradient boundary. The section itself carries only
+   the page's base background colour, exactly like the rest of the page. */
+.plate-glow-teal,
+.plate-deep {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+/* Grey rule marking the seam between the "Available now" and
+   "On the build list" sections. */
+.plate-deep {
+  border-top: 1px solid var(--color-disabled);
+}
+
+.plate-glow-teal::before,
+.plate-deep::before {
+  content: "";
+  position: absolute;
+  inset: -14% -8%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.plate-glow-teal::before {
+  background:
+    radial-gradient(38% 40% at 65% 40%, rgb(6 233 236 / 0.10), transparent 68%),
+    radial-gradient(30% 38% at 31% 64%, rgb(132 48 241 / 0.09), transparent 68%);
+}
+
+.plate-deep::before {
+  background:
+    linear-gradient(180deg, transparent, rgb(255 255 255 / 0.022) 40%, rgb(255 255 255 / 0.022) 60%, transparent),
+    radial-gradient(30% 38% at 30% 44%, rgb(132 48 241 / 0.13), transparent 68%),
+    radial-gradient(24% 34% at 75% 66%, rgb(6 233 236 / 0.05), transparent 70%);
 }
 
 input:-webkit-autofill,

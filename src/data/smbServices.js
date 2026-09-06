@@ -14,10 +14,11 @@ export const smbServices = [
     deliverable: 'A written report with prioritized recommendations.',
     timeline: 'Typically 1–2 weeks from kickoff to delivery.',
     investment: '$750 – $1,500 depending on scope.',
+    priceRange: '$750–$1,500',
     example: {
       label: 'See an example',
       content:
-        'Such as: a regional accounting firm that suspects their client onboarding process has bottlenecks but isn\'t sure where to start — and wants a clear picture of what could be improved before committing to any solution.',
+        'Such as: a regional accounting firm that suspects their client onboarding process has bottlenecks but isn\'t sure where to start, and wants a clear picture of what could be improved before committing to any solution.',
     },
   },
   {
@@ -27,7 +28,7 @@ export const smbServices = [
     description:
       'We take the learnings from a process audit and design and build automated workflows to tackle your highest priority items and free up your team’s bandwidth for work that actually requires human judgment. Each engagement includes documentation and a handoff session. Your team will understand what was built and why.',
     whoItsFor:
-      'Businesses with identified manual processes that are ready to automate — whether from a Process Audit or your own assessment.',
+      'Businesses with identified manual processes that are ready to automate, whether from a Process Audit or your own assessment.',
     whatsIncluded:
       'Solution design for one or more workflow automations. Includes development and testing, deployment, documentation, handoff training session.',
     whatItsNot:
@@ -35,10 +36,11 @@ export const smbServices = [
     deliverable: 'Working automations with documentation your team can reference.',
     timeline: 'Typically 2–6 weeks depending on scope.',
     investment: '$1,000 – $12,000 fixed fee depending on scope.',
+    priceRange: '$1,000–$12,000',
     example: {
       label: 'See an example',
       content:
-        'We\'ve done this for situations like migrating an entire course catalog — quizzes, assignments, and structure — from one learning platform to another via script, rather than recreating everything by hand and eliminating weeks of manual work.',
+        'We\'ve done this for situations like migrating an entire course catalog (quizzes, assignments, and structure) from one learning platform to another via script, rather than recreating everything by hand and eliminating weeks of manual work.',
     },
   },
   {
@@ -52,10 +54,11 @@ export const smbServices = [
     whatsIncluded:
       'Customized, instructor-led workshop using the information your specific team needs. \n\nHands-on activities, guided instructions, and reference materials your team can keep.',
     whatItsNot:
-      'This is not generic AI overview training, a tool sales pitch, or implementation of AI systems into your workflows. We teach — we do not build during this engagement.',
+      'This is not generic AI overview training, a tool sales pitch, or implementation of AI systems into your workflows. We teach. We do not build during this engagement.',
     deliverable: 'Workshop session plus reference documentation.',
-    timeline: 'Half-day to full-day session, scheduled at your convenience.',
+    timeline: 'Half-day to full-day session, scoped to your needs and scheduled at your convenience.',
     investment: 'Priced based on format and group size.\n\n For larger groups, typically $1,200 – $2,000 for half day, and $2,000 - 3,500 for full day. \n\n We work with smaller groups and individuals as well.',
+    priceRange: '$1,200–$3,500',
     example: {
       label: 'See an example',
       content:
@@ -77,10 +80,11 @@ export const smbServices = [
     deliverable: 'Ongoing advisory relationship with documented recommendations.',
     timeline: 'Monthly retainer, minimum commitment based on your needs.',
     investment: '$750–$1,500/month based on hours.',
+    priceRange: '$750–$1,500/mo',
     example: {
       label: 'See an example',
       content:
-        'Such as: a business that completed an AI workshop but keeps running into new questions as their workflows evolve — which tool fits a new task, whether a vendor\'s AI claims hold up, how to handle an edge case.',
+        'Such as: a business that completed an AI workshop but keeps running into new questions as their workflows evolve: which tool fits a new task, whether a vendor\'s AI claims hold up, how to handle an edge case.',
     },
   },
   {
@@ -98,6 +102,7 @@ export const smbServices = [
     deliverable: 'Training sessions for individuals or teams with supporting reference materials.',
     timeline: 'Individual sessions or multi-session packages.',
     investment: 'Typically $300 – $500 per session, $2,000 – $3,500 for structured package (8 sessions).',
+    priceRange: '$300–$3,500',
     example: {
       label: 'See an example',
       content:

@@ -1,56 +1,93 @@
 import { Link } from 'react-router-dom'
 import FormattedText from '../components/FormattedText'
 import SiteLogo from '../components/SiteLogo'
-import { introduction, differentiators, valueStatement } from '../data/about'
+import ImageZoom from '../components/ImageZoom'
+import { introduction, valueStatement, serviceAreas } from '../data/about'
 import { ROUTES } from '../config/routes'
+
+const avatarGradient = {
+  background: 'linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-teal))',
+}
+
+function FounderAvatar({ className }) {
+  return (
+    <div
+      className={`flex items-center justify-center rounded-full font-bold text-bg ${className}`}
+      style={avatarGradient}
+      aria-hidden="true"
+    >
+      H
+    </div>
+  )
+}
 
 export default function About() {
   return (
-    <>
-      <section className="hero-glow pt-10 pb-5 md:pt-14 md:pb-7">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <SiteLogo variant="hero" className="mb-8 md:mb-10" />
-          <h1 className="text-3xl text-text md:text-5xl">
-            Built by an automation engineer with 10+ years experience in technology and training.
+    <section className="hero-glow py-12 md:py-16">
+      <div className="mx-auto flex max-w-5xl flex-col gap-10 px-6 sm:flex-row sm:gap-12 lg:gap-16">
+        <div className="shrink-0 text-center sm:w-64 lg:w-72">
+          <ImageZoom
+            className="w-full"
+            label="Enlarge founder portrait"
+            zoomContent={<FounderAvatar className="h-[70vw] w-[70vw] max-h-[420px] max-w-[420px] text-8xl" />}
+          >
+            <FounderAvatar className="mx-auto h-44 w-44 text-6xl sm:h-48 sm:w-48" />
+          </ImageZoom>
+
+          <p className="mt-3 text-xs italic text-subtle">Founder, Streamline South</p>
+
+          <ImageZoom
+            className="mt-6 w-full"
+            label="Enlarge Streamline South logo"
+            zoomContent={
+              <img src="/logo.png" alt="Streamline South logo" className="h-auto w-[min(90vw,860px)]" />
+            }
+          >
+            <SiteLogo variant="hero" />
+          </ImageZoom>
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <h1 className="text-2xl leading-snug text-text md:text-3xl">
+            Built by an automation engineer with 10+ years in technology and training.
           </h1>
-          <div className="brand-divider-fade mx-auto mt-8 max-w-xl" aria-hidden="true" />
-        </div>
-      </section>
 
-      <section className="pb-12 pt-5 md:pb-16 md:pt-6">
-        <div className="mx-auto max-w-3xl px-6">
           {introduction && (
-            <FormattedText text={introduction} className="leading-relaxed text-body" wrapperClassName="mb-8" />
+            <FormattedText
+              text={introduction}
+              className="leading-relaxed text-body"
+              wrapperClassName="mt-4 max-w-2xl space-y-4"
+            />
           )}
-          <div className="surface-card rounded-lg bg-surface p-8">
-            <ul className="list-disc space-y-4 pl-5 marker:text-accent-text">
-              {differentiators.map((item) => (
-                <li key={item.label} className="leading-relaxed text-body">
-                  <span className="font-semibold text-accent-text">{item.label}</span>
-                  {' — '}
-                  {item.description}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
 
-      <section className="bg-surface-alt py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <blockquote className="text-lg leading-relaxed text-body md:text-xl">
+          <blockquote
+            className="my-6 max-w-xl border-l-[3px] pl-4 text-base italic leading-relaxed text-text"
+            style={{ borderColor: 'var(--color-brand-teal)' }}
+          >
             &ldquo;{valueStatement}&rdquo;
           </blockquote>
-        </div>
-      </section>
 
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <Link to={ROUTES.contact} className="inline-block rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover">
-            Work with us
-          </Link>
+          <p className="mt-8 text-xs font-semibold uppercase tracking-wider text-accent-text">
+            Serving the Gulf Coast
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {serviceAreas.map((town) => (
+              <li key={town} className="rounded-full border border-text/15 px-3 py-1.5 text-xs text-body">
+                {town}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8">
+            <Link
+              to={ROUTES.contact}
+              className="inline-block rounded-md bg-accent px-8 py-3 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover"
+            >
+              Work with us
+            </Link>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

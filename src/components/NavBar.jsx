@@ -20,6 +20,14 @@ const navLinkClass = ({ isActive }) =>
     isActive ? 'text-highlight' : 'text-text'
   }`
 
+function NewTag() {
+  return (
+    <span className="ml-1.5 rounded bg-highlight px-1.5 py-0.5 align-middle text-[9px] font-bold uppercase tracking-wide text-bg">
+      New
+    </span>
+  )
+}
+
 export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -38,6 +46,10 @@ export default function NavBar() {
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
+          <NavLink to={ROUTES.streamlines} className={navLinkClass}>
+            Streamlines
+            <NewTag />
+          </NavLink>
           <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
@@ -91,6 +103,11 @@ export default function NavBar() {
 
       {mobileOpen && (
         <div className="border-t border-text/8 bg-bg px-6 py-4 md:hidden">
+          <Link to={ROUTES.streamlines} className={`block py-2 ${headerText}`} onClick={closeMobile}>
+            Streamlines
+            <NewTag />
+          </Link>
+          <div className="my-3 border-t border-text/8" />
           <p className={`mb-2 ${headerText}`}>Services</p>
           <Link to={ROUTES.smb} className={`block py-2 ${headerText}`} onClick={closeMobile}>Small Business</Link>
           <Link to={ROUTES.corporate} className={`block py-2 ${headerText}`} onClick={closeMobile}>Corporate</Link>

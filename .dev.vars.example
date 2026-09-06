@@ -1,0 +1,3 @@
+# Copy to .dev.vars (gitignored) for local `npx wrangler dev`.
+# Buttondown: Settings > Programming > API key
+BUTTONDOWN_API_KEY=

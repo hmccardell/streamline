@@ -13,12 +13,13 @@ export const corporateServices = [
       'This is not off-the-shelf training with your logo on the slides. Every program is designed from scratch for your team and your goals.',
     specialties: 'AI integration and enablement, Python, JavaScript, Java, software development fundamentals, automated testing, Agile/Scrum adoption and coaching, business analysis, requirements engineering, and more.',
     duration: '1–3 days on-site or remote.',
-    investment: 'Priced based on duration and customization — get in touch',
+    investment: 'Priced based on duration and customization: get in touch',
     investmentLink: true,
+    priceRange: 'By quote',
     example: {
       label: 'See an example',
       content:
-        'We\'ve delivered this for teams like a 20-person IT operations group upskilled over three days in practical Python — data transformation, pulling from APIs, and automating repetitive tasks — followed by focused follow-up sessions on Cursor, Git with GitHub, and querying Jira\'s API with Python.',
+        'We\'ve delivered this for teams like a 20-person IT operations group upskilled over three days in practical Python (data transformation, pulling from APIs, and automating repetitive tasks), followed by focused follow-up sessions on Cursor, Git with GitHub, and querying Jira\'s API with Python.',
     },
   },
   {
@@ -35,11 +36,6 @@ export const corporateServices = [
       'This is not workshop delivery by us. We build the curriculum; your team runs the sessions.',
     duration: 'Scope-dependent, typically 2–4 weeks.',
     investment: '$3,000 – $8,000 depending on scope.',
+    priceRange: '$3,000–$8,000',
   },
-]
-
-export const corporateJourneySteps = [
-  'Needs Assessment / Curriculum Design',
-  'Workshop Delivery',
-  'Follow-on Engagements',
 ]
