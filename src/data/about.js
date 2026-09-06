@@ -1,4 +1,6 @@
-export const introduction = `I'm an automation engineer and a career-long trainer. For the past seven years I've led technical training for an enterprise software apprenticeship program, and before that I did backend development at a major healthcare analytics platform and automated test engineering at Nike. Streamline South is where those two threads meet: build the system, then make sure your team can run it.`
+export const introduction = `My name is Hayes (it's my first!), and I'm an automation engineer and a career-long trainer. For the past seven years I've led technical training for an enterprise software apprenticeship program, and before that I did backend development at a major healthcare analytics platform and automated test engineering at Nike.
+
+Streamline South is where those two paths meet: not only can I build a system to solve real business problems, but I can also make sure your team has everything it needs to use it effectively.`
 
 export const differentiators = [
   {
@@ -65,7 +67,7 @@ export const apprenticeship = {
   xchange: {
     heading: "A pipeline into tech jobs on Chicago's South Side",
     body:
-      "Over the past couple of years, one of our biggest clients has been Xchange Chicago. We've graduated dozens of apprentices recruited from the South Side of Chicago, from every age and walk of life, many with little or no technical experience. Graduates are offered positions at SDI Presence, a local managed service provider working across a range of clients.",
+      "Over the past couple of years, one of our biggest clients has been Xchange Chicago. We've graduated dozens of apprentices recruited from the South Side of Chicago, from every age and walk of life, many with little or no technical experience. Graduates are offered positions at SDI Presence, a local managed service provider working across a range of clients. Helping people move into technology careers and reach goals that once felt out of range, including home ownership through Xchange's partnership with Habitat for Humanity, has been some of the most rewarding work of my career.",
     about:
       'Xchange Chicago is led by the Comer Science & Education Foundation, SDI Presence, and P33. It builds tech workforce hubs meant to be open to every Chicagoan, pairing training and wrap-around services with a direct pathway into apprenticeships and jobs at employers based in the same community.',
     links: [

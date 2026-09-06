@@ -71,7 +71,7 @@ function AboutCta() {
           className="card-accent overflow-hidden rounded-2xl border border-white/10 bg-bg/95 px-6 py-10 text-center shadow-2xl backdrop-blur-md md:px-12 md:py-14"
           style={{ '--card-accent': 'var(--gradient-brand)' }}
         >
-          <h2 className="text-3xl text-text md:text-4xl">Use me as a resource.</h2>
+          <h2 className="text-3xl text-text md:text-4xl">Use me as a resource</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-body md:text-lg">
             Weighing an automation, custom application, or a training plan? Run it past me. I'll give you the honest advice you need to make the best decision.
           </p>
@@ -187,7 +187,8 @@ export default function About() {
             />
           </ImageZoom>
 
-          <p className="mt-3 text-xs italic text-subtle">Founder, Streamline South</p>
+          <p className="mt-3 text-sm font-semibold text-text">Hayes McCardell II</p>
+          <p className="mt-1 text-xs italic text-subtle">Founder, Streamline South</p>
 
           <a
             href={LINKEDIN_URL}
@@ -212,7 +213,7 @@ export default function About() {
 
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl leading-snug text-text md:text-3xl">
-            Built by an automation engineer with 10+ years in technology and training.
+            Built by an automation engineer with 10+ years in technology and training
           </h1>
 
           {introduction && (
