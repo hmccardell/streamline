@@ -127,14 +127,15 @@ h1, h2, h3, h4 {
    hue-matched rule marks where it meets a plain section, and a radial glow in
    the photo's colour sits behind the centred card. Used by the Streamlines
    hero (pink) and CTA (violet), the SMB "Start with the Audit" CTA
-   (blue-green), the Corporate "scope your engagement" CTA (purple), and
-   the Home newsletter CTA (blue). */
+   (blue-green), the Corporate "scope your engagement" CTA (purple), the Home
+   newsletter CTA (blue), and the About "use me as a resource" CTA (teal). */
 .streamlines-hero,
 .streamlines-cta,
 .smb-audit-cta,
 .corporate-scope-cta,
 .home-newsletter-cta,
-.scheduling-checklist-cta {
+.scheduling-checklist-cta,
+.about-cta {
   position: relative;
   background-color: var(--color-bg);
   background-size: cover;
@@ -162,7 +163,8 @@ h1, h2, h3, h4 {
 .smb-audit-cta,
 .corporate-scope-cta,
 .home-newsletter-cta,
-.scheduling-checklist-cta {
+.scheduling-checklist-cta,
+.about-cta {
   content-visibility: auto;
   contain-intrinsic-size: auto 480px;
 }
@@ -217,12 +219,23 @@ h1, h2, h3, h4 {
   border-top: 1px solid var(--rule-automation-pink);
 }
 
+.about-cta {
+  background-image: url("/teacher-teal.webp");
+  background-image: image-set(
+    url("/teacher-teal.avif") type("image/avif"),
+    url("/teacher-teal.webp") type("image/webp")
+  );
+  background-position: center;
+  border-top: 1px solid var(--rule-automation-cyan);
+}
+
 .streamlines-hero::before,
 .streamlines-cta::before,
 .smb-audit-cta::before,
 .corporate-scope-cta::before,
 .home-newsletter-cta::before,
-.scheduling-checklist-cta::before {
+.scheduling-checklist-cta::before,
+.about-cta::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -250,6 +263,10 @@ h1, h2, h3, h4 {
 
 .scheduling-checklist-cta::before {
   background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(214 51 132 / 0.18), transparent 74%);
+}
+
+.about-cta::before {
+  background: radial-gradient(ellipse 90% 75% at 50% 55%, rgb(6 233 236 / 0.16), transparent 74%);
 }
 
 /* Ambient section lighting. The cyan/purple glow is not the section's

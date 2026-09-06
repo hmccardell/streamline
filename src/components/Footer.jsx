@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import { ROUTES, DEMOS_URL } from '../config/routes'
 import { serviceSlug } from './ServiceSectionNav'
+import LinkedInIcon from './LinkedInIcon'
+
+const LINKEDIN_URL = 'https://www.linkedin.com/in/hayes-ii'
 
 const linkClass = 'block text-sm text-body transition-colors hover:text-highlight'
-const headingClass = 'text-xs font-semibold uppercase tracking-wider text-subtle'
+const headingClass = 'text-xs font-semibold uppercase tracking-wider text-accent-text'
 
 const serviceLinks = [
   { label: 'Process Audit', name: 'Process Audit' },
@@ -52,6 +55,15 @@ export default function Footer() {
               <Link to={ROUTES.about} className={linkClass}>About</Link>
               <Link to={ROUTES.contact} className={linkClass}>Contact</Link>
               <a href={DEMOS_URL} target="_blank" rel="noopener" className={linkClass}>Live Demos</a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener"
+                className={`${linkClass} inline-flex items-center gap-2`}
+              >
+                <LinkedInIcon className="h-4 w-4" />
+                LinkedIn
+              </a>
             </nav>
           </div>
 
