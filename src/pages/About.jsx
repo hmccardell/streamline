@@ -128,7 +128,11 @@ function ApprenticeshipSection() {
               </div>
               <div className="md:w-1/2">
                 <h3 className="text-lg leading-snug text-text">{row.heading}</h3>
-                <p className="mt-3 leading-relaxed text-body">{row.body}</p>
+                <FormattedText
+                  text={row.body}
+                  className="leading-relaxed text-body"
+                  wrapperClassName="mt-3"
+                />
               </div>
             </div>
           ))}
