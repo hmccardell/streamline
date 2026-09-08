@@ -122,7 +122,7 @@ export default function Scheduling() {
           </div>
 
           <p className="mt-4 text-sm leading-relaxed text-body">
-            This booking flow is the same system we build for clients. We run it for Streamline South itself, so the demo is the real thing, not a mockup.
+            This is a demo, but the workflow behind it is real. It is the same booking-and-confirmation setup we build into client sites, and we run it for Streamline South itself (without SMS) so you can book a consultation with us.
           </p>
           <p className="mt-3 text-sm text-body">
             Prefer to try it yourself?{' '}
