@@ -1,11 +1,24 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import NewsletterSignup from '../../components/NewsletterSignup'
 import { ROUTES, SCHEDULING_URL } from '../../config/routes'
+
+const DEMO_VIDEO_ID = '_ZgSld0Ktj8'
+const DEMO_VIDEO_TITLE = 'Bookings Page Streamline demo'
+const DEMO_VIDEO_POSTER = `https://i.ytimg.com/vi/${DEMO_VIDEO_ID}/maxresdefault.jpg`
 
 function PlayIcon({ className = 'h-6 w-6' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M10 8 L17 12 L10 16 Z" />
+    </svg>
+  )
+}
+
+function ExternalArrow() {
+  return (
+    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7m10 0v10" />
     </svg>
   )
 }
@@ -46,9 +59,11 @@ const tiers = [
 ]
 
 export default function Scheduling() {
+  const [playing, setPlaying] = useState(false)
+
   return (
     <>
-      <section className="hero-glow pt-12 pb-10 md:pt-16 md:pb-14">
+      <section className="hero-glow pt-12 pb-0 md:pt-16">
         <div className="mx-auto max-w-3xl px-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-highlight">
             Streamline: Scheduling &amp; Booking
@@ -59,45 +74,74 @@ export default function Scheduling() {
           <p className="mt-4 max-w-xl text-lg text-body">
             Give customers an easy way to book online, with a branded booking page connected to your calendar and automated confirmations.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
-              to={ROUTES.contact}
-              className="rounded-md bg-accent px-8 py-3 text-center text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover"
-            >
-              Get Scheduling Starter, from $750
-            </Link>
-            <a
-              href={SCHEDULING_URL}
-              target="_blank"
-              rel="noopener"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-text/20 px-8 py-3 text-sm font-semibold text-text transition-colors hover:border-highlight/50 hover:bg-highlight/5"
-            >
-              <PlayIcon className="h-4 w-4" />
-              Watch the 90-second demo
-            </a>
-          </div>
-
-          <a
-            href={SCHEDULING_URL}
-            target="_blank"
-            rel="noopener"
-            className="group relative mt-10 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-xl border border-white/10 sm:aspect-[16/7]"
+          <div
+            className="relative mt-8 aspect-[16/9] overflow-hidden rounded-xl border border-white/10 sm:aspect-[16/7]"
             style={{
               background:
                 'linear-gradient(135deg, rgb(132 48 241 / 0.22), rgb(6 233 236 / 0.14))',
             }}
           >
-            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-highlight bg-bg/60 text-highlight transition-transform group-hover:scale-105">
-              <PlayIcon />
-            </span>
-            <span className="absolute inset-x-4 bottom-4 text-xs text-body">
-              90-second demo: a client books online and gets a confirmation text within seconds.
-            </span>
-          </a>
+            {playing ? (
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src={`https://www.youtube-nocookie.com/embed/${DEMO_VIDEO_ID}?autoplay=1&rel=0`}
+                title={DEMO_VIDEO_TITLE}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setPlaying(true)}
+                aria-label="Play the demo video"
+                className="group absolute inset-0 flex items-center justify-center"
+              >
+                <img
+                  src={DEMO_VIDEO_POSTER}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span
+                  className="absolute inset-0 bg-bg/40 transition-colors group-hover:bg-bg/25"
+                  aria-hidden="true"
+                />
+                <span
+                  className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bg via-bg/70 to-transparent"
+                  aria-hidden="true"
+                />
+                <span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-highlight bg-bg/60 text-highlight transition-transform group-hover:scale-105">
+                  <PlayIcon />
+                </span>
+                <span className="absolute inset-x-4 bottom-4 text-xs font-medium text-text">
+                  See a client book online and get a confirmation text within seconds.
+                </span>
+              </button>
+            )}
+          </div>
+
+          <p className="mt-4 text-sm leading-relaxed text-body">
+            This booking flow is the same system we build for clients. We run it for Streamline South itself, so the demo is the real thing, not a mockup.
+          </p>
+          <p className="mt-3 text-sm text-body">
+            Prefer to try it yourself?{' '}
+            <a
+              href={SCHEDULING_URL}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1 font-semibold text-highlight hover:underline"
+            >
+              Open the interactive demo
+              <ExternalArrow />
+            </a>
+          </p>
+
+          <div className="brand-divider-fade mx-auto mt-12 max-w-xl md:mt-14" aria-hidden="true" />
         </div>
       </section>
 
-      <section className="py-14 md:py-20">
+      <section className="pt-10 pb-14 md:pt-12 md:pb-20">
         <div className="mx-auto max-w-3xl px-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-accent-text">Two ways to start</p>
           <h2 className="mt-2 text-2xl text-text md:text-3xl">Pick the shape that fits your business.</h2>
@@ -129,12 +173,31 @@ export default function Scheduling() {
             ))}
           </div>
 
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="flex justify-center">
+              <Link
+                to={`${ROUTES.contact}?package=starter`}
+                className="inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 text-center text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover"
+              >
+                Get Scheduling Starter, from $750
+              </Link>
+            </div>
+            <div className="flex justify-center">
+              <Link
+                to={`${ROUTES.contact}?package=custom`}
+                className="inline-flex items-center justify-center rounded-md border border-text/20 px-8 py-3 text-center text-sm font-semibold text-text transition-colors hover:border-highlight/50 hover:bg-highlight/5"
+              >
+                Start a Custom Scheduling Build
+              </Link>
+            </div>
+          </div>
+
           <div className="mt-8 rounded-lg border border-accent/30 bg-accent/10 p-5">
             <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-accent-text">Honest caveat</p>
             <p className="mt-2 text-sm leading-relaxed text-body">
-              Automated texting requires a one-time carrier registration step, which takes 1&ndash;4
-              weeks, before it can go live. Your booking page and email confirmations launch right
-              away. Texting turns on as soon as registration clears.
+              Off the shelf apps often include texting, but if you want a custom build, then wiring in automated texting requires a one-time carrier registration step. It can take 1-4
+              weeks before it clears with the carrier and goes live. Either way, your booking page and email confirmations launch right
+              away. 
             </p>
           </div>
         </div>

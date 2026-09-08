@@ -1,6 +1,16 @@
+import { useSearchParams } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
 
+// Keep these in sync with the tiers in src/pages/streamlines/Scheduling.jsx.
+const PACKAGE_MESSAGES = {
+  starter: "I'm interested in the Scheduling Starter package ($750–$1,500).",
+  custom: "I'm interested in the Custom Scheduling Build package ($2,000–$4,000).",
+}
+
 export default function Contact() {
+  const [searchParams] = useSearchParams()
+  const defaultMessage = PACKAGE_MESSAGES[searchParams.get('package')] ?? ''
+
   return (
     <>
       <section className="hero-glow pt-10 pb-6 md:pt-14 md:pb-8">
@@ -23,7 +33,7 @@ export default function Contact() {
         />
         <div className="relative mx-auto max-w-xl px-6">
           <div className="surface-card rounded-lg bg-black/85 p-6 backdrop-blur-lg md:p-8">
-            <ContactForm />
+            <ContactForm defaultMessage={defaultMessage} />
           </div>
         </div>
       </section>
