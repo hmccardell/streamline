@@ -5,6 +5,10 @@ export const DEMOS_URL = 'https://demos.streamlinesouth.com'
 
 export const SCHEDULING_URL = 'https://demos.streamlinesouth.com/scheduling'
 
+/** Streamline South's own Google Calendar appointment booking page. */
+export const BOOKING_URL =
+  'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0c8TSa4uuhyglwAV7YkqUO1i6YNdMvJgki43cMRn9ugPg0ELAYXVNztR5wtlnouEFSLdnYpsiQ'
+
 /** Canonical paths with trailing slashes (Cloudflare Pages serves folder routes this way). */
 export const ROUTES = {
   home: '/',

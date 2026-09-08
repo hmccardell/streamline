@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import NewsletterSignup from '../../components/NewsletterSignup'
-import { ROUTES, SCHEDULING_URL } from '../../config/routes'
+import { ROUTES, SCHEDULING_URL, BOOKING_URL } from '../../config/routes'
 
 const DEMO_VIDEO_ID = '_ZgSld0Ktj8'
 const DEMO_VIDEO_TITLE = 'Bookings Page Streamline demo'
@@ -122,7 +122,16 @@ export default function Scheduling() {
           </div>
 
           <p className="mt-4 text-sm leading-relaxed text-body">
-            This is a demo, but the workflow behind it is real. It is the same booking-and-confirmation setup we build into client sites, and we run it for Streamline South itself (without SMS) so you can book a consultation with us.
+            This is a demo, but the workflow behind it is real. It is the same booking-and-confirmation setup we build into client sites, and we run it for Streamline South itself (without SMS) so you can{' '}
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-highlight hover:underline"
+            >
+              book a consultation
+            </a>{' '}
+            with us.
           </p>
           <p className="mt-3 text-sm text-body">
             Prefer to try it yourself?{' '}
