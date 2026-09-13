@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import FormattedText from '../components/FormattedText'
+import ImageZoom from '../components/ImageZoom'
 import { serviceSlug } from '../components/ServiceSectionNav'
 import { ROUTES } from '../config/routes'
 import { smbServices, customAppShowcase } from '../data/smbServices'
@@ -193,12 +194,33 @@ export default function SMB() {
               </a>
             ) : null}
 
-            {customAppShowcase.screenshot?.src ? (
-              <img
-                src={customAppShowcase.screenshot.src}
-                alt={customAppShowcase.screenshot.alt}
-                className="mt-6 w-full rounded-lg border border-white/10"
-              />
+            {customAppShowcase.screenshots?.length ? (
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {customAppShowcase.screenshots.map((shot) => (
+                  <figure key={shot.src}>
+                    <ImageZoom
+                      className="w-full"
+                      label={`Enlarge screenshot: ${shot.caption}`}
+                      zoomContent={
+                        <img
+                          src={shot.src}
+                          alt={shot.alt}
+                          className="h-auto max-h-[82vh] w-auto max-w-[92vw] rounded-xl border border-white/10"
+                        />
+                      }
+                    >
+                      <span className="block aspect-[16/10] overflow-hidden rounded-lg border border-white/10">
+                        <img
+                          src={shot.src}
+                          alt={shot.alt}
+                          className="h-full w-full object-cover object-top"
+                        />
+                      </span>
+                    </ImageZoom>
+                    <figcaption className="mt-2 text-xs italic text-subtle">{shot.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
             ) : (
               <div className="mt-6 flex aspect-[16/10] items-center justify-center rounded-lg border border-dashed border-text/25 bg-surface-alt text-xs text-subtle">
                 Screenshot coming soon

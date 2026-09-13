@@ -152,11 +152,18 @@ export const customAppShowcase = {
     label: '@charmed_slime_shop on Instagram',
     url: 'https://www.instagram.com/charmed_slime_shop/',
   },
-  // TODO: drop a real screenshot in /public and set `src` (e.g. '/charmed-slime-shop.png').
-  screenshot: {
-    src: null,
-    alt: 'The application: a searchable catalog of entries with photos, attributes, and ratings.',
-  },
+  screenshots: [
+    {
+      src: '/slime_shelf/slime-shelf-list.webp',
+      alt: 'List view of Boopie\'s Slime Shelf, with thumbnails, ratings, prices, photo counts, and brand and base filters.',
+      caption: 'List view: ratings, prices, photos, and filters in one table.',
+    },
+    {
+      src: '/slime_shelf/slime-shelf-gallery.webp',
+      alt: 'Gallery view of Boopie\'s Slime Shelf, a searchable photo grid of cataloged slimes.',
+      caption: 'Gallery view: a searchable photo grid of every slime.',
+    },
+  ],
   body: [
     'A local educator preparing to launch Charmed Slime Shop, her own slime business, needed a better way to organize her market research than a growing pile of spreadsheets and photos. She wanted to catalog what is already on the market, compare products side by side, and keep her notes somewhere she could actually search.',
     'We worked with her to define what mattered: which attributes to capture, how she wanted to browse and filter, and what should be a fixed list versus a free-form note. Then we built it, a custom web app where every entry has its own details, photos, and rating, with admin-managed categories so the data stays consistent and room to add new fields as her needs change.',
